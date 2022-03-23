@@ -1,0 +1,102 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alexander et~al.(2005)Alexander, Bruny{\'e}, Sidman, and
+  Weil]{alexander2005gaming}
+Amy~L Alexander, Tad Bruny{\'e}, Jason Sidman, and Shawn~A Weil.
+\newblock From gaming to training: A review of studies on fidelity, immersion,
+  presence, and buy-in and their effects on transfer in pc-based simulations
+  and games.
+\newblock \emph{DARWARS Training Impact Group}, 5:\penalty0 1--14, 2005.
+
+\bibitem[Craighead et~al.(2007)Craighead, Murphy, Burke, and
+  Goldiez]{craighead2007survey}
+Jeff Craighead, Robin Murphy, Jenny Burke, and Brian Goldiez.
+\newblock A survey of commercial \& open source unmanned vehicle simulators.
+\newblock In \emph{Robotics and Automation, 2007 IEEE International Conference
+  on}, pages 852--857. IEEE, 2007.
+
+\bibitem[fli()]{flightGear}
+Flightgear.
+\newblock URL \url{http://www.flightgear.org}.
+\newblock [Online].
+
+\bibitem[Summers et~al.(2002)Summers, Barnes, and
+  Shaw]{summers2002determination}
+Phil Summers, Dave Barnes, and Andy Shaw.
+\newblock Determination of planetary meteorology from aerobot flight sensors.
+\newblock In \emph{Proceedings of 7th ESA Workshop on Advanced Space
+  Technologies for Robotics and Automation}, 2002.
+
+\bibitem[Cervin et~al.(2004)Cervin, Mills, and W{\"u}nsche]{cervin20043d}
+B~Cervin, C~Mills, and BC~W{\"u}nsche.
+\newblock A 3d interface for an unmanned aerial vehicle.
+\newblock \emph{SE Stage}, 4, 2004.
+
+\bibitem[sim({\natexlab{a}})]{simbad}
+Simbad, {\natexlab{a}}.
+\newblock URL \url{http://simbad.sourceforge.net/}.
+\newblock [Online].
+
+\bibitem[sim({\natexlab{b}})]{simrobot}
+Simrobot, {\natexlab{b}}.
+\newblock URL \url{http://www.informatik.uni-bremen.de/simrobot/index_e.htm}.
+\newblock [Online].
+
+\bibitem[Laue et~al.(2006)Laue, Spiess, and R{\"o}fer]{laue2006simrobot}
+Tim Laue, Kai Spiess, and Thomas R{\"o}fer.
+\newblock Simrobot--a general physical robot simulator and its application in
+  robocup.
+\newblock In \emph{RoboCup 2005: Robot Soccer World Cup IX}, pages 173--183.
+  Springer, 2006.
+
+\bibitem[Roadmap(2002)]{roadmap2002roadmap}
+Unmanned Aerial~Vehicles Roadmap.
+\newblock Roadmap 2002-2027.
+\newblock \emph{US DoD, December}, 2002.
+
+\bibitem[Wu et~al.(2004)Wu, Sun, and Zhou]{wu2004micro}
+Huaiyu Wu, Dong Sun, and Zhaoying Zhou.
+\newblock Micro air vehicle: Configuration, analysis, fabrication, and test.
+\newblock \emph{Mechatronics, IEEE/ASME Transactions on}, 9\penalty0
+  (1):\penalty0 108--117, 2004.
+
+\bibitem[Chao et~al.(2010)Chao, Cao, and Chen]{chao2010autopilots}
+HaiYang Chao, YongCan Cao, and YangQuan Chen.
+\newblock Autopilots for small unmanned aerial vehicles: a survey.
+\newblock \emph{International Journal of Control, Automation and Systems},
+  8\penalty0 (1):\penalty0 36--44, 2010.
+
+\bibitem[Brisset et~al.(2006)Brisset, Drouin, Gorraz, Huard, and
+  Tyler]{brisset2006paparazzi}
+Pascal Brisset, Antoine Drouin, Michel Gorraz, Pierre-Selim Huard, and Jeremy
+  Tyler.
+\newblock The paparazzi solution.
+\newblock In \emph{MAV 2006, 2nd US-European Competition and Workshop on Micro
+  Air Vehicles}, pages pp--xxxx, 2006.
+
+\bibitem[Aitkin et~al.(2004)]{aitkin2004playing}
+Alexander~Lewis Aitkin et~al.
+\newblock Playing at reality: Exploring the potential of the digital game as a
+  medium for science communication.
+\newblock \emph{Made available in DSpace on 2011-01-04T02: 37: 23Z (GMT). No.
+  of bitstreams: 7 02whole. pdf. jpg: 1881 bytes, checksum:
+  ac88eea70013e083ecb0c5330e53e7a2 (MD5) 01front. pdf. jpg: 1881 bytes,
+  checksum: ac88eea70013e083ecb0c5330e53e7a2 (MD5) 02whole. pdf. txt: 563958
+  bytes, checksum: 5e41da750d4369fa13d0fba08ad6a048 (MD5) 01front. pdf. txt:
+  12659 bytes, checksum: 0481a3322578325d8221eb983ac49324 (MD5) 01front. pdf:
+  121957 bytes, checksum: 0856401293636ffe92a2dd3a295de446 (MD5) 02whole. pdf:
+  1742623 bytes, checksum: 91119639a4629d5f2f62aaaf8a2c1126 (MD5) license. txt:
+  1972 bytes, checksum: 659aa5e507bf4ef21d5059f70f34b19c (MD5) Previous issue
+  date: 2008-01-14T05: 43: 23Z}, 2004.
+
+\bibitem[Green and Bavelier(2003)]{green2003action}
+C~Shawn Green and Daphne Bavelier.
+\newblock Action video game modifies visual selective attention.
+\newblock \emph{Nature}, 423\penalty0 (6939):\penalty0 534--537, 2003.
+
+\end{thebibliography}

@@ -1,0 +1,1291 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: UTF-8
+
+@INPROCEEDINGS{KvarnstromEtAl2010,
+  author = {Kvarnstr{\"o}m, Jonas and Doherty, Patrick},
+  title = {Automated planning for collaborative {UAV} systems},
+  booktitle = {Control Automation Robotics \& Vision},
+  year = {2010},
+  pages = {1078-1085},
+  month = {December},
+  abstract = {Mission planning for collaborative Unmanned Aircraft Systems (UAS:s)
+	is a complex topic which involves trade-offs between the degree of
+	centralization or decentralization required, the degree of abstraction
+	in which plans are generated, and the degree to which such plans
+	are distributed among participating UAS:s. In realistic environments
+	such as those found in natural and man-made catastrophes where emergency
+	services personnel are involved, a certain degree of centralization
+	and abstraction is necessary in order for those in charge to understand
+	and eventually sign off on potential plans. It is also quite often
+	the case that unconstrained distribution of actions is inconsistent
+	with the loosely coupled interactions and dependencies which arise
+	between collaborating systems. In this article, we present a new
+	planning algorithm for collaborative UAS:s based on combining ideas
+	from forward chaining planning with partial-order planning leading
+	to a new hybrid partial order forward-chaining (POFC) framework which
+	meets the requirements on centralization, abstraction and distribution
+	we find in realistic emergency services settings.},
+  added-at = {2011-04-18T00:00:00.000+0200},
+  biburl = {http://www.bibsonomy.org/bibtex/265c495185ebe098f5d316b7a9eeff87c/dblp},
+  crossref = {conf/icarcv/2010},
+  ee = {http://dx.doi.org/10.1109/ICARCV.2010.5707969},
+  interhash = {34aecb435eea5ed956609f780a81449d},
+  intrahash = {65c495185ebe098f5d316b7a9eeff87c},
+  keywords = {{aircraft control;control engineering computing;disasters;emergency
+	services;forward chaining;groupware;multi-agent systems;planning
+	(artificial intelligence);remotely operated vehicles;POFC framework;automated
+	planning;collaborating systems;collaborative UAS:s;collaborative
+	UAV systems;collaborative unmanned aircraft systems;degree of abstraction;degree
+	of centralization;degree of decentralization;emergency services personnel;forward
+	chaining planning;hybrid partial order forward-chaining framework;loosely
+	coupled interactions;man-made catastrophes;mission planning;natural
+	catastrophes;partial-order planning;planning algorithm;realistic
+	emergency services settings;unconstrained distribution;Collaboration;Planning;Prototypes;Robots;Search
+	methods;Space exploration;Unmanned aerial vehicles;Partial-order
+	planning;planning with control formulas;unmanned aerial vehicles}},
+  owner = {Cristian},
+  timestamp = {2011.04.18}
+}
+
+@INBOOK{AdolfEtAl2010,
+  chapter = {19},
+  pages = {301-316},
+  title = {Onboard mission management for a VTOL UAV using sequence and supervisory
+	control},
+  publisher = {InTech},
+  year = {2010},
+  editor = {Vedran Kordic},
+  author = {Adolf, Florian and Andert, Franz},
+  month = {October},
+  booktitle = {Cutting Edge Robotics 2010},
+  isbn = {978-953-307-062-9},
+  owner = {Cristian},
+  timestamp = {2014.01.16}
+}
+
+@ARTICLE{Ai-ChangEtAl2004,
+  author = {Ai-Chang, Mitchell and Bresina, John and Charest, Len and Chase,
+	Adam and Hsu, J.C-J. and Jonsson, Ari and Kanefsky, Bob and Morris,
+	Paul and Rajan, Kanna and Yglesias, Jeffrey and Chafin, B.G. and
+	Dias, W.C. and Maldague, P.F.},
+  title = {{MAPGEN: Mixed-Initiative Planning and Scheduling for the Mars Exploration
+	Rover Mission}},
+  journal = {Intelligent Systems, IEEE},
+  year = {2004},
+  volume = {19},
+  pages = {8-12},
+  number = {1},
+  publisher = {IEEE}
+}
+
+@MASTERSTHESIS{Alighanbari2004,
+  author = {Mehdi Alighanbari},
+  title = {{Task Assignment Algorithms for Teams of UAVs in Dynamic Environments}},
+  school = {Massachusetts Institute of Technology, Department of Aeronautics
+	and Astronautics},
+  year = {2004},
+  address = {Cambridge MA},
+  month = {June},
+  keywords = {task allocation},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@INPROCEEDINGS{AminRigiEtAl2009,
+  author = {Amin Rigi, M. and Mohammadi, S.},
+  title = {Finding a hybrid genetic algorithm-constraint satisfaction problem
+	based solution for resource constrained project scheduling},
+  booktitle = {Emerging Technologies, 2009. ICET 2009. International Conference
+	on},
+  year = {2009},
+  pages = {52-56},
+  month = {October},
+  abstract = {Project scheduling has attracted many researchers in recent years.
+	It is about single-item or small batch production where scarce resources
+	have to be met when scheduling dependent activities over time. Because
+	of high complexity of the problem uninformed search strategies cannot
+	solve the problem optimally. This paper proposes a new evolutionary
+	approach to resource constrained project scheduling problem. Hybrid
+	genetic algorithm (GA)-constraint satisfaction problem (CSP) has
+	been applied to solve resource constrained project scheduling (RCPS).
+	GA's task is to find the best schedule. Discussed approach has used
+	CSP in order to overcome the existing inconsistencies in activities
+	precedence and resources conflicts. A full state CSP with min-conflict
+	heuristic has been used for solving precedence conflicts. And a simple
+	iterative CSP is used to resolve the resource conflicts.},
+  keywords = {constraint theory;genetic algorithms;operations research;query formulation;scheduling;hybrid
+	genetic algorithm constraint satisfaction problem;min conflict heuristic;precedence
+	conflicts;resource constrained project scheduling;simple iterative
+	CSP;small batch production;uninformed search strategies;Genetics;Scheduling
+	algorithm;constraint satisfaction problem;genetic algorithm;min-conflict
+	heuristic;project scheduling},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{Barnier1998,
+  author = {Barnier, Nicolas and Brisset, Pascal},
+  title = {Optimization by hybridization of a genetic algorithm with constraint
+	satisfaction techniques},
+  booktitle = {Evolutionary Computation Proceedings, 1998. IEEE World Congress on
+	Computational Intelligence., The 1998 IEEE International Conference
+	on},
+  year = {1998},
+  pages = {645-649},
+  organization = {IEEE},
+  owner = {Cristian},
+  timestamp = {2014.06.11}
+}
+
+@INPROCEEDINGS{Bartak1999,
+  author = {Roman Bart{\'a}k},
+  title = {Constraint programming: In pursuit of the holy grail},
+  booktitle = {Proceedings of the Week of Doctoral Students},
+  year = {1999},
+  pages = {555-564},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{Bello-OrgazEtAl2013,
+  author = {Bello-Orgaz, Gema and Barrero, David.F. and R-Moreno, Maria.D. and
+	Camacho, David},
+  title = {Acquisition of Business Intelligence from Human Experience in Route
+	Planning},
+  journal = {Enterprise Information Systems},
+  year = {2013},
+  pages = {1-21},
+  number = {Impact Factor: 9.26-Q1},
+  date = {2013-06-22},
+  editor = {Taylor \& Francis},
+  issn = {1751-7575},
+  keywords = {Genetic Algorithms, Data Mining, Graph Theory, Business Intelligence}
+}
+
+@ARTICLE{Bello-OrgazEtAl2012,
+  author = {Bello-Orgaz, Gema and Menendez, Hector and Camacho, David},
+  title = {{Adaptive K-Means Algorithm for overlapped graph clustering}},
+  journal = {International Journal of Neural Systems},
+  year = {2012},
+  volume = {22 (Impact Factor:5.1 -Q1)},
+  pages = {1250018 1-19},
+  number = {05},
+  date = {2012-06-18},
+  issn = {0129-0657},
+  keywords = {Genetic Algorithms, graph and overlapping clustering}
+}
+
+@ARTICLE{Bessiere2006,
+  author = {Bessi{\`e}re, Christian},
+  title = {Constraint propagation},
+  journal = {Handbook of constraint programming},
+  year = {2006},
+  pages = {29-83},
+  owner = {Cristian},
+  timestamp = {2014.03.25}
+}
+
+@INCOLLECTION{BessiereEtAl1999,
+  author = {Bessi{\`e}re, Christian and Meseguer, Pedro and Freuder, EugeneC.
+	and Larrosa, Javier},
+  title = {On Forward Checking for Non-binary Constraint Satisfaction},
+  booktitle = {Principles and Practice of Constraint Programming â€“ CPâ€™99},
+  publisher = {Springer Berlin Heidelberg},
+  year = {1999},
+  editor = {Jaffar, Joxan},
+  volume = {1713},
+  series = {Lecture Notes in Computer Science},
+  pages = {88-102},
+  isbn = {978-3-540-66626-4},
+  owner = {Cristian},
+  timestamp = {2014.03.24}
+}
+
+@INCOLLECTION{BethkeEtAl2007,
+  author = {Bethke, Brett and Valenti, Mario and How, Jonathan},
+  title = {Cooperative vision based estimation and tracking using multiple UAVs},
+  booktitle = {Advances in Cooperative Control and Optimization},
+  publisher = {Springer},
+  year = {2007},
+  pages = {179-189}
+}
+
+@ARTICLE{BethkeEtAl2008,
+  author = {Bethke, B. and Valenti, M. and How, J. P.},
+  title = {{UAV Task Assignment}},
+  journal = {IEEE Robotics and Automation Magazine},
+  year = {2008},
+  volume = {15},
+  pages = {39-44},
+  number = {1},
+  month = {March},
+  keywords = {decision making},
+  owner = {Cristian},
+  timestamp = {2014.01.16}
+}
+
+@CONFERENCE{CajiasEtAl2011,
+  author = {Raul Cajias and Antonio Gonzalez-Pardo and David Camacho},
+  title = {{A Multi-Agent Traffic Simulation Framework for Evaluating the Impact
+	of Traffic Lights}},
+  booktitle = {Proceedings of the 3rd International Conference onAgents and Artificial
+	Intelligence (ICAART)},
+  year = {2011},
+  volume = {2},
+  series = {Communications in Computer and Information Science},
+  pages = {443-446},
+  publisher = {Springer Berlin / Heidelberg},
+  date = {2011-01-25},
+  isbn = {978-989-8425-41-6},
+  keywords = {Multi-agents systems, Traffic Simulation}
+}
+
+@ARTICLE{CamachoEtAl2006_1,
+  author = {David Camacho and Ricardo Aler and Daniel Borrajo and Jose Manuel
+	Molina},
+  title = {Multi-agent plan based information gathering},
+  journal = {Applied Intelligence},
+  year = {2006},
+  volume = {25},
+  pages = {59-71},
+  number = {1},
+  date = {2006-01-01},
+  keywords = {Multi-agents systems},
+  owner = {Cristian},
+  timestamp = {2014.03.30}
+}
+
+@ARTICLE{CamachoEtAl2005,
+  author = {David Camacho and Ricardo Aler and Daniel Borrajo and Jose Manuel
+	Molina},
+  title = {{A Multi-Agent architecture for intelligent gathering systems}},
+  journal = {AI Communications},
+  year = {2005},
+  volume = {18},
+  pages = {15-32},
+  number = {1},
+  date = {2005-01-01},
+  keywords = {Multi-agents systems}
+}
+
+@INPROCEEDINGS{CamachoEtAl2001_2,
+  author = {David Camacho and Daniel Borrajo and José M. Molina and Ricardo Aler},
+  title = {{Abstract Planning in Dynamic Environments}},
+  booktitle = {Proceedings of the IEEE Systems, Man, and Cybernectics Conference
+	(SMC-2001)},
+  year = {2001},
+  volume = {4},
+  pages = {2331-2336},
+  address = {Tucson (AZ), USA},
+  organization = {IEEE},
+  date = {2001-12-04},
+  keywords = {Planning}
+}
+
+@ARTICLE{CamachoEtAl2006_2,
+  author = {David Camacho and Fernando Fernandez and Miguel A. Rodelgo},
+  title = {Roboskeleton: An architecture for coordinating robot soccer agents},
+  journal = {Engineering Applications of AI},
+  year = {2006},
+  volume = {19},
+  pages = {179-188},
+  number = {2},
+  date = {2006-01-01},
+  keywords = {Multi-agents systems},
+  owner = {Cristian},
+  timestamp = {2014.03.30}
+}
+
+@INPROCEEDINGS{CamachoEtAl2001_1,
+  author = {David Camacho and Cesar Hernandez and Jose Manuel Molina},
+  title = {Information Classification using Fuzzy Knowledge Based Agents},
+  booktitle = {Proceedings of the IEEE Systems, Man, and Cybernectics Conference
+	(SMC-2001)},
+  year = {2001},
+  volume = {4},
+  pages = {2575-2580},
+  address = {USA},
+  organization = {IEEE},
+  date = {2001-12-04},
+  keywords = {Multi-agents systems, knowledge-based, Web Services, Information Extraction},
+  owner = {Cristian},
+  timestamp = {2014.03.30}
+}
+
+@INPROCEEDINGS{CamachoEtAl2000,
+  author = {David Camacho and Jose Manuel Molina and Daniel Borrajo},
+  title = {A Multiagent Approach for Electronic Travel Planning},
+  booktitle = {Proceedings of the Second International Bi-Conference Workshop on
+	Agent-Oriented Information Systems (AOIS-2000)},
+  year = {2000},
+  address = {Austin, TX (USA)},
+  organization = {AAAI},
+  date = {2000-12-05},
+  keywords = {Multi-agents systems, Planning},
+  owner = {Cristian},
+  timestamp = {2014.03.30}
+}
+
+@ARTICLE{ChiangEtAl1996,
+  author = {Chiang, Wen-Chyuan and Russell, Robert A},
+  title = {Simulated annealing metaheuristics for the vehicle routing problem
+	with time windows},
+  journal = {Annals of Operations Research},
+  year = {1996},
+  volume = {63},
+  pages = {3-27},
+  owner = {Cristian},
+  publisher = {Springer},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{DiazEtAl2013,
+  author = {Daniel Diaz, Amedeo Cesta, Angelo Oddi, Riccardo Rasconi and Maria
+	D. R-Moreno},
+  title = {{Efficient Energy Management for Autonomous Control in Rover Missions}},
+  journal = {IEEE Computational Intelligence Magazine},
+  year = {2013},
+  volume = {8},
+  pages = {12-24},
+  number = {4},
+  note = {Special Issue on Computational Intelligence for Space Systems and
+	Operations},
+  owner = {Cristian},
+  timestamp = {2014.03.30}
+}
+
+@ARTICLE{DebEtAl2002,
+  author = {Deb, K. and Pratap, A. and Agarwal, S. and Meyarivan, T.},
+  title = {A fast and elitist multiobjective genetic algorithm: {NSGA-II}},
+  journal = {Evolutionary Computation, IEEE Transactions on},
+  year = {2002},
+  volume = {6},
+  pages = {182-197},
+  number = {2},
+  month = {Apr},
+  owner = {Cristian},
+  timestamp = {2014.06.13}
+}
+
+@INPROCEEDINGS{DeRaedtEtAl2010,
+  author = {Luc {De Raedt} and Tias Guns and Siegfried Nijssen},
+  title = {Constraint Programming for Data Mining and Machine Learning},
+  booktitle = {AAAI},
+  year = {2010},
+  pages = {1671-1675},
+  owner = {Cristian},
+  timestamp = {2014.03.24}
+}
+
+@ARTICLE{DohertyEtAl2009,
+  author = {Doherty, Patrick and Kvarnstr{\"o}m, Jonas and Heintz, Fredrik},
+  title = {{A temporal logic-based planning and execution monitoring framework
+	for Unmanned Aircraft Systems}},
+  journal = {Autonomous Agents and Multi-Agent Systems},
+  year = {2009},
+  volume = {19},
+  pages = {332-377},
+  number = {3},
+  month = {December},
+  acmid = {1644183},
+  address = {Hingham, MA, USA},
+  issn = {1387-2532},
+  issue_date = {December 2009},
+  keywords = {Execution monitoring; Intelligent autonomous systems; Planning; Reasoning
+	about action and change; Temporal action logic; Unmanned aircraft
+	systems},
+  numpages = {46},
+  owner = {Cristian},
+  publisher = {Kluwer Academic Publishers},
+  timestamp = {2014.01.16}
+}
+
+@ARTICLE{FabianiEtAl2007,
+  author = {P. Fabiani and V. Fuertes and A. Piquereau and R. Mampey and F. Teichteil-Konigsbuch},
+  title = {Autonomous flight and navigation of {VTOL UAVs}: from autonomy demonstrations
+	to out-of-sight flights},
+  journal = {Aerospace Science and Technology },
+  year = {2007},
+  volume = {11},
+  pages = {183-193},
+  number = {2-3},
+  issn = {1270-9638},
+  keywords = {Flight control},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@ARTICLE{FonsecaEtAl1998,
+  author = {Fonseca, C.M. and Fleming, P.J.},
+  title = {{Multiobjective optimization and multiple constraint handling with
+	evolutionary algorithms. I. A unified formulation}},
+  journal = {Systems, Man and Cybernetics, IEEE Transactions on},
+  year = {1998},
+  volume = {28},
+  pages = {26-37},
+  number = {1},
+  month = {Jan},
+  owner = {Cristian},
+  timestamp = {2014.04.12}
+}
+
+@INPROCEEDINGS{GengEtAl2013,
+  author = {Geng, L. and Zhang, Y.F. and Wang, J.J. and Fuh, J.Y.H. and Teo,
+	S.H.},
+  title = {Cooperative task planning for multiple autonomous UAVs with graph
+	representation and genetic algorithm},
+  booktitle = {Control and Automation (ICCA), 2013 10th IEEE International Conference
+	on},
+  year = {2013},
+  pages = {394-399},
+  month = {June},
+  abstract = {This paper addresses the mission planning issues for guiding a group
+	of UAVs to carry out a series of tasks, namely classification, attack,
+	and verification, against multiple targets. The flying space is constrained
+	with the presence of flight prohibit zones (FPZs) and enemy radar
+	sites. The solution space for task assignment and sequencing is modeled
+	with a graph representation. With a path formation based on Dubins
+	vehicle paths, a genetic algorithm (GA) has been developed for finding
+	the optimal solution from the graph to achieve the following goals:
+	(1) completion of the three tasks on each target, (2) avoidance of
+	FPZs, (3) low level of exposure to enemy radar detection, and (4)
+	short overall flying path length. A case study is presented to demonstrate
+	the effectiveness of the proposed methods.},
+  issn = {1948-3449},
+  keywords = {aerospace robotics;autonomous aerial vehicles;cooperative systems;genetic
+	algorithms;graph theory;mobile robots;path planning;radar detection;Dubins
+	vehicle path;FPZ;attack task;cooperative task planning;enemy radar
+	detection;enemy radar site;flight prohibit zone;flying space;genetic
+	algorithm;graph representation;mission planning;multiautonomous UAV;path
+	formation;task assignment;task classification;verification task;Biological
+	cells;Educational institutions;Genetic algorithms;Mechanical engineering;Radar
+	detection;Turning},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{GentEtAl2006,
+  author = {Gent, Ian P. and Jefferson, Chris and Miguel, Ian},
+  title = {MINION: A Fast, Scalable, Constraint Solver},
+  booktitle = {Proceedings of the 2006 Conference on ECAI 2006: 17th European Conference
+	on Artificial Intelligence August 29 -- September 1, 2006, Riva Del
+	Garda, Italy},
+  year = {2006},
+  pages = {98-102},
+  address = {Amsterdam, The Netherlands, The Netherlands},
+  publisher = {IOS Press},
+  isbn = {1-58603-642-4},
+  numpages = {5},
+  url = {http://minion.sourceforge.net/}
+}
+
+@CONFERENCE{Gonzalez-PardoEtAl2013,
+  author = {Antonio Gonzalez-Pardo and David Camacho},
+  title = {A new {CSP} graph-based representation for Ant Colony Optimization},
+  booktitle = {2013 IEEE Conference on Evolutionary Computation (CEC 2013)},
+  year = {2013},
+  volume = {1},
+  pages = {689-696},
+  date = {2013-05-13},
+  keywords = {Computational Intelligence, Ant Colony Optimization, Constraint Satisfaction
+	Problems, CSP-graph based representation},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{Gonzalez-PardoEtAl2014_1,
+  author = {Antonio Gonzalez-Pardo and Fernando Palero and David Camacho},
+  title = {{An empirical study on Collective Intelligence algorithms for Video
+	Games problem-solving}},
+  booktitle = {The journal Computing and Informatics},
+  year = {2014},
+  pages = {1-20},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@CONFERENCE{Gonzalez-PardoEtAl2014_2,
+  author = {Antonio Gonzalez-Pardo and Fernando Palero and David Camacho},
+  title = {{Micro and Macro Lemmings simulations based on ants colonies}},
+  booktitle = {{EvoGAMES- Bio-inspired Algorithms in Games}},
+  year = {2014},
+  pages = {1-12},
+  address = {Granada, Spain},
+  month = {April},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@CONFERENCE{Gonzalez-PardoEtAl2010,
+  author = {Antonio Gonzalez-Pardo and Pablo Varona and David Camacho and Francisco
+	de Borja Rodriguez},
+  title = {Optimal message interchange in a self-organizing multi-agent system},
+  booktitle = {Intelligent Distributed Computing IV},
+  year = {2010},
+  editor = {Mohammad Essaaidi and Michele Malgeri and Costin Badica},
+  volume = {315},
+  series = {Studies in Computational Intelligence IV},
+  pages = {131 - 141},
+  publisher = {Springer Verlag Berlin Heidelberg},
+  date = {2010-09-16},
+  issn = {978-3-642-15210-8},
+  keywords = {Multi-agents systems, Graph Theory, Signature Neural Networks}
+}
+
+@ARTICLE{GuerrieroEtAl2014,
+  author = {F. Guerriero and R. Surace and V. Loscra and E. Natalizio},
+  title = {A multi-objective approach for unmanned aerial vehicle routing problem
+	with soft time windows constraints},
+  journal = {Applied Mathematical Modelling},
+  year = {2014},
+  volume = {38},
+  pages = {839-852},
+  number = {3},
+  owner = {Cristian},
+  timestamp = {2014.09.18}
+}
+
+@INPROCEEDINGS{GuettierEtAl2002,
+  author = {Guettier, Christophe and Allo, Bertrand and Legendre, Vincent and
+	Poncet, Jean-Clair and Strady-Lecubin, Nelly},
+  title = {Constraint Model-based Planning and Scheduling with Multiple Resources
+	and Complex Collaboration Schema.},
+  booktitle = {Procedings of the Sixth International Conference on Artificial Intelligence
+	Planning Systems (AIPS)},
+  year = {2002},
+  pages = {284-292},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{HamEtAl1988,
+  author = {Inyong Ham and Stephen C.-Y. Lu},
+  title = {Computer-Aided Process Planning: The Present and the Future },
+  journal = {\{CIRP\} Annals - Manufacturing Technology },
+  year = {1988},
+  volume = {37},
+  pages = {591 - 601},
+  number = {2},
+  issn = {0007-8506},
+  keywords = {Computer-aided process planning (CAPP)},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{Hebrard2008,
+  author = {Hebrard, Emmanuel},
+  title = {Mistral, a constraint satisfaction library},
+  journal = {Proceedings of the Third International CSP Solver Competition},
+  year = {2008},
+  pages = {31-39},
+  publisher = {Citeseer},
+  url = {http://4c.ucc.ie/~ehebrard/mistral/doxygen/html/main.html}
+}
+
+@INCOLLECTION{HebradEtAl2010,
+  author = {Hebrard, Emmanuel and Mahony, Eoin and Sullivan, Barry},
+  title = {Constraint Programming and Combinatorial Optimisation in Numberjack},
+  booktitle = {Integration of AI and OR Techniques in Constraint Programming for
+	Combinatorial Optimization Problems},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2010},
+  editor = {Lodi, Andrea and Milano, Michela and Toth, Paolo},
+  volume = {6140},
+  series = {Lecture Notes in Computer Science},
+  pages = {181-185},
+  isbn = {978-3-642-13519-4},
+  language = {English},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {http://numberjack.ucc.ie/}
+}
+
+@BOOK{Holland1992,
+  title = {Adaptation in Natural and Artificial Systems},
+  publisher = {MIT Press},
+  year = {1992},
+  author = {Holland, John H.},
+  address = {Cambridge, MA, USA},
+  isbn = {0-262-58111-6},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{JashmiEtAl2008,
+  author = {Bahareh Jafari Jashmi and Malek Mouhoub},
+  title = {Solving Temporal Constraint Satisfaction Problems with Heuristic
+	Based Evolutionary Algorithms},
+  booktitle = {Procedings of the IEEE International Conference on Tools with Artificial
+	Intelligence (ICTAI)},
+  year = {2008},
+  pages = {525-529},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://dx.doi.org/10.1109/ICTAI.2008.43},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{JohnstonEtAl1994,
+  author = {Mark D. Johnston and Steven Minton},
+  title = {{Analyzing a Heuristic Strategy for Constraint-Satisfaction and Scheduling}},
+  booktitle = {In Intelligent Scheduling},
+  year = {1994},
+  pages = {257-289},
+  publisher = {Morgan},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@INPROCEEDINGS{JussienEtAl2008,
+  author = {Jussien, Narendra and Rochart, Guillaume and Lorca, Xavier and others},
+  title = {{Choco: an open source Java constraint programming library}},
+  booktitle = {CPAIOR'08 Workshop on Open-Source Software for Integer and Contraint
+	Programming (OSSICP'08)},
+  year = {2008},
+  pages = {1-10},
+  owner = {Cristian},
+  timestamp = {2014.03.21},
+  url = {http://www.emn.fr/z-info/choco-solver/}
+}
+
+@INPROCEEDINGS{KapadiaEtAl2013,
+  author = {Kapadia, Mubbasir and Beacco, Alejandro and Garcia, Francisco and
+	Reddy, Vivek and Pelechano, Nuria and Badler, Norman I},
+  title = {Multi-domain real-time planning in dynamic environments},
+  booktitle = {Proceedings of the 12th ACM SIGGRAPH/Eurographics Symposium on Computer
+	Animation},
+  year = {2013},
+  pages = {115-124},
+  organization = {ACM}
+}
+
+@ARTICLE{Kendoul2012,
+  author = {Kendoul, Farid},
+  title = {{Survey of advances in guidance, navigation, and control of unmanned
+	rotorcraft systems}},
+  journal = {J. Field Robot.},
+  year = {2012},
+  volume = {29},
+  pages = {315-378},
+  number = {2},
+  month = {March/April},
+  abstract = {Recently, there has been growing interest in developing unmanned aircraft
+	systems (UAS) with advanced onboard autonomous capabilities. This
+	paper describes the current state of the art in autonomous rotorcraft
+	UAS (RUAS) and provides a detailed literature review of the last
+	two decades of active research on RUAS. Three functional technology
+	areas are identified as the core components of an autonomous RUAS.
+	Guidance, navigation, and control (GNC) have received much attention
+	from the research community, and have dominated the UAS literature
+	from the nineties until now. This paper first presents the main research
+	groups involved in the development of GNC systems for RUAS. Then
+	it describes the development of a framework that provides standard
+	definitions and metrics characterizing and measuring the autonomy
+	level of a RUAS using GNC aspects. This framework is intended to
+	facilitate the understanding and the organization of this survey
+	paper, but it can also serve as a common reference for the UAS community.
+	The main objective of this paper is to present a comprehensive survey
+	of RUAS research that captures all seminal works and milestones in
+	each GNC area, with a particular focus on practical methods and technologies
+	that have been demonstrated in flight tests. These algorithms and
+	systems have been classified into different categories and classes
+	based on the autonomy level they provide and the algorithmic approach
+	used. Finally, the paper discusses the RUAS literature in general
+	and highlights challenges that need to be addressed in developing
+	autonomous systems for unmanned rotorcraft. Â© 2012 Wiley Periodicals,
+	Inc.},
+  acmid = {2307467},
+  address = {Chichester, UK},
+  issn = {1556-4959},
+  issue_date = {March 2012},
+  numpages = {64},
+  owner = {Cristian},
+  publisher = {John Wiley and Sons Ltd.},
+  timestamp = {2014.01.16}
+}
+
+@INPROCEEDINGS{KnollEtAl2008,
+  author = {Knoll, Byron and Kisy\'{n}ski and Carenini, Giuseppe and Conati,
+	Cristina and Mackworth, Alan, and Poole, David},
+  title = {AIspace: Interactive Tools for Learning Artificial Intelligence},
+  booktitle = {Proceedings of the AAAI 2008 AI Education Workshop},
+  year = {2008},
+  address = {Chicago, IL},
+  month = {July},
+  abstract = {AIspace is a project that has been providing interactive tools for
+	teaching and learning basic concepts in Artificial Intelligence for
+	several years. In this paper we give an overview of the history and
+	current state of the project. We introduce new functionality which
+	has been added to the tools and allows them to be customized for
+	various applications such as presentations, online tutorials, or
+	assignments. We also share our experience on how the AIspace tools
+	have been successfully integrated into undergraduate AI courses at
+	the University of British Columbia. Finally, we provide preliminary
+	results of fielded evaluations of AIspace usage in these courses.},
+  url = {http://www.aispace.org/}
+}
+
+@MANUAL{KuchcinskiEtAl2014,
+  title = {JaCoP Library user guide},
+  author = {Krzysztof Kuchcinski and Radosław Szymanek},
+  edition = {4.0},
+  month = {May},
+  year = {2014},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {http://www.osolpro.com/jacop/index.php}
+}
+
+@ARTICLE{KuterEtAl2005,
+  author = {Ugur Kuter and Evren Sirin and Bijan Parsia and Dana Nau and James
+	Hendlerb},
+  title = {Information gathering during planning for Web Service composition
+	},
+  journal = {Web Semantics: Science, Services and Agents on the World Wide Web
+	},
+  year = {2005},
+  volume = {3},
+  pages = {183 - 205},
+  number = {2-3},
+  note = {Selcted Papers from the International Semantic Web Conference, 2004
+	ISWC, 2004 3rd. International Semantic Web Conference, 2004 },
+  issn = {1570-8268},
+  keywords = {\{HTN\} planning},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@INPROCEEDINGS{LarocheEtAl1999,
+  author = {Laroche, P. and Charpillet, F. and Schott, R.},
+  title = {Mobile robotics planning using abstract Markov decision processes},
+  booktitle = {Tools with Artificial Intelligence, 1999. Proceedings. 11th IEEE
+	International Conference on},
+  year = {1999},
+  pages = {299-306},
+  issn = {1082-3409},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@INPROCEEDINGS{LearyEtAl2011,
+  author = {Leary, S. and Deittert, M. and Bookless, J.},
+  title = {{Constrained UAV mission planning: A comparison of approaches}},
+  booktitle = {Computer Vision Workshops (ICCV Workshops), 2011 IEEE International
+	Conference on},
+  year = {2011},
+  pages = {2002-2009},
+  month = {November},
+  abstract = {In this paper the optimal timing of air-to-ground tasks is considered.
+	A scenario is examined, where multiple unmanned air vehicles (UAVs)
+	must perform one or more tasks on a set of geographically dispersed
+	targets in the presence of no-fly zones. Strict inter-task timing
+	constraints apply, which have been chosen by BAE Systems' Military
+	Air & Information (MAI) business to reflect current UAV usage. The
+	optimal assignment of these tasks requires cooperation amongst the
+	vehicles in order to generate a plan that is efficient, with respect
+	to overall mission duration and satisfies all problem constraints.
+	A number of previous papers have compared the benefits of employing
+	numerous optimisation algorithms to this class of problem. Recently,
+	auction techniques have been investigated for coordination of multiple
+	autonomous assets and this paper compares two auctioning algorithms,
+	a meta-heuristic algorithm and a mathematical programming approach
+	for solving such constrained task assignment problems.},
+  keywords = {autonomous aerial vehicles;mathematical programming;military aircraft;path
+	planning;UAV usage;air-to-ground task;auction technique;auctioning
+	algorithm;constrained UAV mission planning;constrained task assignment
+	problem;geographically dispersed target;intertask timing constraint;mathematical
+	programming;metaheuristic algorithm;mission duration;multiple autonomous
+	assets;multiple unmanned air vehicle;optimal assignment;optimisation
+	algorithm;Cooling;Schedules;Simulated annealing;Temperature;Temperature
+	sensors;Vehicles},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@ARTICLE{MannEtAl2008,
+  author = {Martin Mann and Sebastian Will and Rolf Backofen},
+  title = {{CPSP}-tools - Exact and Complete Algorithms for High-throughput
+	{3D} Lattice Protein Studies},
+  journal = {BMC Bioinformatics},
+  year = {2008},
+  volume = {9},
+  pages = {230-237},
+  number = {1},
+  abstract = {Background: The principles of protein folding and evolution pose problems
+	of very high inherent complexity. Often these problems are tackled
+	using simplified protein models, e.g. lattice proteins. The CPSP-tools
+	package provides programs to solve exactly and completely the problems
+	typical of studies using 3D lattice protein models. Among the tasks
+	addressed are the prediction of (all) globally optimal and/or suboptimal
+	structures as well as sequence design and neutral network exploration.
+	Results: In contrast to stochastic approaches, which are not capable
+	of answering many fundamental questions, our methods are based on
+	fast, non-heuristic techniques. The resulting tools are designed
+	for high-throughput studies of 3D-lattice proteins utilizing the
+	Hydrophobic-Polar (HP) model. The source bundle is freely available
+	at http://www.bioinf.uni-freiburg.de/sw/cpsp/
+	
+	Conclusions: The CPSP-tools package is the first set of exact and
+	complete methods for extensive, high-throughput studies of non-restricted
+	3D-lattice protein models. In particular, our package deals with
+	cubic and face centered cubic (FCC) lattices.},
+  issn = {1471-2105},
+  owner = {Cristian},
+  timestamp = {2014.03.24},
+  user = {mmann}
+}
+
+@ARTICLE{MerinoEtAl2006,
+  author = {Merino, Luis and Caballero, Fernando and Mart{\'\i}nez-de Dios, J
+	Ramiro and Ferruz, Joaquin and Ollero, An{\'\i}bal},
+  title = {A cooperative perception system for multiple UAVs: Application to
+	automatic detection of forest fires},
+  journal = {Journal of Field Robotics},
+  year = {2006},
+  volume = {23},
+  pages = {165-184},
+  number = {3-4},
+  publisher = {Wiley Online Library}
+}
+
+@ARTICLE{Mouhoub2004,
+  author = {Malek Mouhoub},
+  title = {Reasoning with Numeric and Symbolic Time Information},
+  journal = {Artificial Intelligence Review},
+  year = {2004},
+  volume = {21},
+  pages = {25-56},
+  number = {1},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  ee = {http://dx.doi.org/10.1023/B:AIRE.0000007179.60276.39},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@TECHREPORT{Mouhoub2002,
+  author = {Malek Mouhoub},
+  title = {Solving Temporal Constraints in Real Time and in a Dynamic Environment},
+  institution = {American Asociation for Artificial Intelligence (AAAI)},
+  year = {2002},
+  number = {WS-02-17},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@CONFERENCE{MuscettolaEtAl2002,
+  author = {Nicola Muscettola and Gregory A. Dorais and Chuck Fry and Richard
+	Levinson and Christian Plaunt},
+  title = {{IDEA}: Planning at the Core of Autonomous Reactive Agents},
+  booktitle = {in Proceedings of the 3rd International NASA Workshop on Planning
+	and Scheduling for Space},
+  year = {2002},
+  month = {April},
+  organization = {Sixth International Conference on AI Planning and Scheduling},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@MISC{NASA1998,
+  author = {{NASA Dryden}},
+  title = {{NASA's environmental research aircraft and sensor technology program
+	Apex Project completes critical design review}},
+  month = {April},
+  year = {1998},
+  owner = {Cristian},
+  timestamp = {2014.09.18}
+}
+
+@MANUAL{vanOmmeEtAl2014,
+  title = {Google or-tools open source library user's manual},
+  author = {Nikolaj van Omme and Laurent Perron and Vincent Furnon},
+  organization = {Google},
+  edition = {0.2.11},
+  month = {September},
+  year = {2014},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {https://code.google.com/p/or-tools/}
+}
+
+@INPROCEEDINGS{PalaciosEtAl2002,
+  author = {H{\'e}ctor Palacios and H{\'e}ctor Geffner},
+  title = {{Planning as Branch and Bound: A constraint programming implementation}},
+  booktitle = {Proceedings of Conferencia Lationamericana en Informatica (CLEI)},
+  year = {2002},
+  volume = {2},
+  pages = {239-251},
+  owner = {Cristian},
+  timestamp = {2014.04.07}
+}
+
+@INPROCEEDINGS{PohlEtAl2008,
+  author = {A.J. Pohl and G.B. Lamont},
+  title = {Multi-objective UAV mission planning using evolutionary computation},
+  booktitle = {Winter Simulation Conference (WSC 2008)},
+  year = {2008},
+  pages = {1268-1279},
+  month = {December},
+  owner = {Cristian},
+  timestamp = {2014.09.18}
+}
+
+@ARTICLE{RabideauEtAl2006,
+  author = {Rabideau, Gregg and Tran, Daniel Q and Chien, Steve and Cichy, Benjamin
+	and Sherwood, Rob},
+  title = {Mission operations of earth observing-1 with onboard autonomy},
+  year = {2006},
+  publisher = {Pasadena, CA: Jet Propulsion Laboratory, National Aeronautics and
+	Space Administration, 2006.}
+}
+
+@INPROCEEDINGS{RagniEtAl2006,
+  author = {Marco Ragni and Stefan Wölfl},
+  title = {Temporalizing Cardinal Directions: From Constraint Satisfaction to
+	Planning},
+  booktitle = {KR'06},
+  year = {2006},
+  pages = {472-480}
+}
+
+@INPROCEEDINGS{RajanEtAl2009,
+  author = {Rajan, Kanna and Py, Frederic and McGann, Conor and Ryan, John and
+	O’Reilly, Tom and Maughan, Thom and Roman, Brent},
+  title = {{Onboard adaptive control of AUVs using automated planning and execution}},
+  booktitle = {International Symposium on Unmanned Untethered Submersible Technology
+	(UUST)},
+  year = {2009},
+  pages = {1-13}
+}
+
+@INPROCEEDINGS{Ramirez-AtenciaEtAl2014a,
+  author = {Cristian Ramirez-Atencia and Gema Bello-Orgaz and Maria D. R-Moreno
+	and David Camacho},
+  title = {{A simple CSP-based model for Unmanned Air Vehicle Mission Planning}},
+  booktitle = {IEEE International Symposium on INnovations in Intelligent SysTems
+	and Application},
+  year = {2014},
+  pages = {146-153},
+  month = {June},
+  owner = {Cristian},
+  timestamp = {2014.04.07}
+}
+
+@INPROCEEDINGS{Ramirez-AtenciaEtAl2014b,
+  author = {Cristian Ramirez-Atencia and Gema Bello-Orgaz and Maria D. R-Moreno
+	and David Camacho},
+  title = {{Branching to find feasible solutions in Unmanned Air Vehicle Mission
+	Planning}},
+  booktitle = {International Conference on Intelligent Data Engineering and Automated
+	Learning},
+  year = {2014},
+  pages = {286-294},
+  month = {September},
+  owner = {Cristian},
+  timestamp = {2014.04.07}
+}
+
+@INPROCEEDINGS{RasmussenEtAl2006,
+  author = {Rasmussen, S.J. and Shima, T.},
+  title = {Branch and bound tree search for assigning cooperating UAVs to multiple
+	tasks},
+  booktitle = {American Control Conference},
+  year = {2006},
+  pages = {6-14},
+  owner = {Cristian},
+  timestamp = {2014.04.12}
+}
+
+@ARTICLE{ReddyEtAl2006,
+  author = {Reddy, BSP and Rao, CSP},
+  title = {A hybrid multi-objective {GA} for simultaneous scheduling of machines
+	and {AGVs} in {FMS}},
+  journal = {The International Journal of Advanced Manufacturing Technology},
+  year = {2006},
+  volume = {31},
+  pages = {602-613},
+  number = {5-6},
+  owner = {Cristian},
+  timestamp = {2014.06.11}
+}
+
+@CONFERENCE{R-MorenoEtAl2008,
+  author = {R-Moreno, Mar{\'i}a Dolores and Kurien, James},
+  title = {What is next in Autonomous Control Techniques?},
+  booktitle = {9th International Symposium on Artificial Intelligence, Robotics
+	and Automation for Space (i-SAIRAS 2008)},
+  year = {2008},
+  month = {February}
+}
+
+@INPROCEEDINGS{RollonEtAl2007,
+  author = {Rollon, Emma and Larrosa, Javier},
+  title = {{Multi-objective Russian doll search}},
+  booktitle = {Proceedings Of The National Conference On Artificial Intelligence},
+  year = {2007},
+  volume = {22},
+  number = {1},
+  pages = {249-254},
+  organization = {Menlo Park, CA; Cambridge, MA; London; AAAI Press; MIT Press; 1999},
+  owner = {Cristian},
+  timestamp = {2014.04.12}
+}
+
+@ARTICLE{RollonEtAl2006,
+  author = {Rollon, Emma and Larrosa, Javier},
+  title = {{Bucket Elimination for Multiobjective optimization problems}},
+  journal = {Journal of Heuristics},
+  year = {2006},
+  volume = {12},
+  pages = {307-328},
+  number = {4-5},
+  issn = {1381-1231},
+  keywords = {Multiobjective optimization; Dynamic programming; Decomposition methods;
+	Global constraints},
+  language = {English},
+  owner = {Cristian},
+  publisher = {Kluwer Academic Publishers},
+  timestamp = {2014.04.12}
+}
+
+@BOOK{RusselEtAl2010,
+  title = {{Artificial Intelligence - A Modern Approach (3. internat. ed.)}},
+  publisher = {{Pearson Education}},
+  year = {2010},
+  author = {Russell, Stuart J. and Norvig, Peter},
+  month = {December},
+  abstract = {{The long-anticipated revision of this best-selling book offers the
+	most comprehensive, up-to-date introduction to the theory and practice
+	of artificial intelligence. Intelligent Agents. Solving Problems
+	by Searching. Informed Search Methods. Game Playing. Agents that
+	Reason Logically. First-order Logic. Building a Knowledge Base. Inference
+	in First-Order Logic. Logical Reasoning Systems. Practical Planning.
+	Planning and Acting. Uncertainty. Probabilistic Reasoning Systems.
+	Making Simple Decisions. Making Complex Decisions. Learning from
+	Observations. Learning with Neural Networks. Reinforcement Learning.
+	Knowledge in Learning. Agents that Communicate. Practical Communication
+	in English. Perception. Robotics. For those interested in artificial
+	intelligence.}},
+  added-at = {2010-04-19T01:35:48.000+0200},
+  bibsource = {DBLP, http://dblp.uni-trier.de},
+  howpublished = {Hardcover},
+  isbn = {978-0-13-207148-2},
+  keywords = {intelligence},
+  owner = {Cristian},
+  posted-at = {2007-12-04 01:39:10},
+  timestamp = {2010.04.19}
+}
+
+@MISC{SchulteEtAl2010,
+  author = {Christian Schulte and Guido Tack and Mikael Z. Lagerkvist},
+  title = {{Modeling and Programming with Gecode}},
+  year = {2010},
+  owner = {Cristian},
+  timestamp = {2014.03.21},
+  url = {http://www.gecode.org/}
+}
+
+@INPROCEEDINGS{SchumacherEtAl2004,
+  author = {Schumacher, Corey and Chandler, Phillip and Pachter, Meir and Pachter,
+	Lior},
+  title = {{UAV Task Assignment with Timing Constraints via Mixed-Integer Linear
+	Programming}},
+  booktitle = {AIAA 3rd Unmanned Unlimited Systems Conference},
+  year = {2004},
+  pages = {238-252},
+  institution = {DTIC Document},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{SchwalbEtAl1998,
+  author = {Schwalb, Eddie and Vila, Llu{\'i}s},
+  title = {Temporal Constraints: A Survey},
+  journal = {Constraints},
+  year = {1998},
+  volume = {3},
+  pages = {129-149},
+  number = {2-3},
+  issn = {1383-7133},
+  keywords = {temporal constraints; temporal reasoning; constraint processing},
+  language = {English},
+  owner = {Cristian},
+  publisher = {Kluwer Academic Publishers},
+  timestamp = {2014.02.17}
+}
+
+@MISC{StuckeyEtAl2011,
+  author = {Peter Stuckey and Mark Wallace},
+  title = {{Opturion-CPX}},
+  year = {2011-2014},
+  owner = {Cristian},
+  timestamp = {2014.03.21},
+  url = {http://www.opturion.com/}
+}
+
+@ARTICLE{SurryEtAl1997,
+  author = {Surry, Patrick D and Radcliffe, Nicholas J},
+  title = {{The COMOGA method: constrained optimisation by multi-objective genetic
+	algorithms}},
+  journal = {Control and Cybernetics},
+  year = {1997},
+  volume = {26},
+  pages = {391-412},
+  owner = {Cristian},
+  timestamp = {2014.06.11}
+}
+
+@INPROCEEDINGS{TangEtAl2011,
+  author = {Luohao Tang and Cheng Zhu and Weiming Zhang and Zhong Liu},
+  title = {Robust mission planning based on nested Genetic Algorithm},
+  booktitle = {Advanced Computational Intelligence (IWACI), 2011 Fourth International
+	Workshop on},
+  year = {2011},
+  pages = {45-49},
+  month = {October},
+  abstract = {Military mission planning involves resource allocation and task scheduling
+	and it is a complex combination optimization problem. Traditionally,
+	this problem is solved to get a static solution (plan) with minimal
+	makespan. However, there are lots of uncertainties in the military
+	operations, such as disruptions of actions or unexpected increases
+	of task duration, a static plan is prone to be invalid. This paper
+	focus on generating robust plan which can absorb some deviations.
+	Time-slack based robustness measure is used to qualify the robustness,
+	based on which a nested Genetic Algorithm is proposed to resolve
+	the robust mission planning problem. At last, an illustrative mission
+	instance is presented, three plans with different robustness are
+	tested through simulations and the results provide strong evidence
+	of the benefits of this method.},
+  doi = {10.1109/IWACI.2011.6159972},
+  keywords = {combinatorial mathematics;genetic algorithms;military systems;resource
+	allocation;scheduling;combination optimization problem;military mission
+	planning;military operations;nested genetic algorithm;resource allocation;robust
+	mission planning;static plan;static solution;task scheduling;time-slack
+	based robustness measure;Biological cells;Job shop scheduling;Resource
+	management;Robustness;Schedules},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@INPROCEEDINGS{KonigsbuchEtAl2007,
+  author = {Teichteil-Konigsbuch, F. and Fabiani, P.},
+  title = {A multi-thread decisional architecture for real-time planning under
+	uncertainty},
+  booktitle = {3rd ICAPS Workshop on Planning and Plan Execution for Real-World
+	Systems, Providence, RI},
+  year = {2007},
+  owner = {Cristian},
+  timestamp = {2014.02.17}
+}
+
+@ARTICLE{TianEtAl2006,
+  author = {Jing Tian and Lincheng Shen and Yanxing Zheng},
+  title = {{Genetic algorithm based approach for multi-UAV cooperative reconnaissance
+	mission planning problem}},
+  journal = {Foundations of Intelligent Systems, Proceedings},
+  year = {2006},
+  volume = {4203},
+  pages = {101-110},
+  abstract = {Multiple UAV cooperative reconnaissance is one of the most important
+	aspects of UAV operations. This paper presents a genetic algorithm(GA)
+	based approach for multiple UAVs cooperative reconnaissance mission
+	planning problem. The objective is to conduct reconnaissance on a
+	set of targets within predefined time windows at minimum cost, while
+	satisfying the reconnaissance resolution demands of the targets,
+	and without violating the maximum travel time for each UAV. A mathematical
+	formulation is presented for the problem, taking the targets reconnaissance
+	resolution demands and time windows constraints into account, which
+	are always ignored in previous approaches. Then a CA based approach
+	is put forward to resolve the problem. Our GA implementation uses
+	integer string as the chromosome representation, and incorporates
+	novel evolutionary operators, including a subsequence crossover operator
+	and a forward insertion mutation operator. Finally the simulation
+	results show the efficiency of our algorithm.},
+  isbn = {0302-9743; 3-540-45764-X},
+  owner = {Cristian},
+  timestamp = {2014.01.16}
+}
+
+@INPROCEEDINGS{TorrensEtAl02,
+  author = {Marc Torrens and Boi Faltings},
+  title = {{Using Soft CSPs for Approximating Pareto-Optimal Solution Sets}},
+  booktitle = {In AAAI Workshop Proceedings Preferences in AI and CP: Symbolic Approaches},
+  year = {2002},
+  publisher = {AAAI Press},
+  owner = {Cristian},
+  timestamp = {2014.06.05}
+}
+
+@ARTICLE{VachtsevanosEtAl2005,
+  author = {George Vachtsevanos and Liang Tang and Graham Drozeski and Luis Gutierrez},
+  title = {{From mission planning to flight control of unmanned aerial vehicles:
+	Strategies and implementation tools}},
+  journal = {Annual Reviews in Control },
+  year = {2005},
+  volume = {29},
+  pages = {101 - 115},
+  number = {1},
+  issn = {1367-5788},
+  keywords = {Intelligent control},
+  owner = {Cristian},
+  timestamp = {2014.03.29}
+}
+
+@ARTICLE{VanBeek2006,
+  author = {Van Beek, Peter},
+  title = {Backtracking search algorithms},
+  journal = {Handbook of constraint programming},
+  year = {2006},
+  pages = {85-134},
+  owner = {Cristian},
+  publisher = {Elsevier BV, Amsterdam},
+  timestamp = {2014.03.24}
+}
+
+@INPROCEEDINGS{WhalleyEtAl2005,
+  author = {Whalley, Matthew and Freed, M and Harris, R and Takahashi, Ma and
+	Schulein, G and Howlett, Jason},
+  title = {Design, integration, and flight test results for an autonomous surveillance
+	helicopter},
+  booktitle = {Proceedings of the AHS International Specialists’ Meeting on Unmanned
+	Rotorcraft},
+  year = {2005}
+}
+
+@MANUAL{ZhouEtAl2014,
+  title = {A User’s Guide to Picat},
+  author = {Neng-Fa Zhou and Jonathan Fruhman},
+  edition = {0.6},
+  month = {September},
+  year = {2014},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {http://www.picat-lang.org/}
+}
+
+@INPROCEEDINGS{ZitzlerEtAl2001,
+  author = {Zitzler, Eckart and Laumanns, Marco and Thiele, Lothar},
+  title = {{SPEA2}: Improving the strength Pareto evolutionary algorithm},
+  booktitle = {Proceedings of Evolutionary Methords for Design, Optimization and
+	Control with Applications to Industrial Problems},
+  year = {2001},
+  pages = {95-100},
+  publisher = {Eidgen{\"o}ssische Technische Hochschule Z{\"u}rich (ETH), Institut
+	f{\"u}r Technische Informatik und Kommunikationsnetze (TIK)},
+  owner = {Cristian},
+  timestamp = {2014.06.13}
+}
+
+@MISC{CPLEX,
+  title = {ILOG CPLEX CP Optimizer},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {http://www-03.ibm.com/software/products/en/ibmilogcpleoptistud/}
+}
+
+@MISC{Gurobi,
+  title = {Gurobi},
+  owner = {Cristian},
+  timestamp = {2014.09.19},
+  url = {http://www.gurobi.com/}
+}
+

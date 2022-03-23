@@ -1,0 +1,26 @@
+% Chapter 6
+
+\chapter{Conclusions and Future Works} % Write in your own chapter title
+\label{Chapter6}
+\lhead{Chapter 6. \emph{Conclusions and Future Works }} % Write in your own chapter title to set the page header
+
+\section{Conclusions}
+In this work, we try to search feasible solutions for a \gls{uav} Mission Planning model based on \gls{tcsp}. The presented approach defines missions as a set of tasks to be performed by several \glspl{uav} with some capabilities. The problem is modelled using: (1) temporal constraints to assure that each \gls{uav} only performs one task at a time; (2) logical constraints such as the maximum and minimum altitude reachable or restricted zone permissions, and (3) resource constraints, such as the sensors and equipment needed or the fuel consumption, among others. This simple approach is quite close to real \gls{uav} missions, with less conditions treated.
+
+Concretely, we have designed an optimization function to minimize three objectives: the fuel consumption, the number of \glspl{uav} used in the mission and the total flight time of all the \glspl{uav}.
+
+We have shown that the model is easily computable using a known solver, i.e. Gecode, and both the entire space of solutions (using \gls{bt}) and the optimal solution (using \gls{bb}) can be found provided that the mission is resolvable.
+
+From the obtained results, we have observed that the runtime necessary to search the entire space of solutions using \gls{bt} search is exponential, as reported in literature, but decreases as the number of constraints increase (because of the decrease of the number of possible solutions).
+
+On a second experiment, we have shown that the \gls{wcop} approach is very useful to find a optimal solution, but not for computing the entire \gls{pof}. We have also observed that is very important to consider bigger weights in variables that are computed faster in order to improve the runtime. An interesting fact observed is that the runtime spent in the \gls{bb} search decreases as the number of temporal constraints given by the temporal dependency schemas decreases.
+
+
+\section{Future works}
+As future lines of work, this developed \gls{uav} Mission Planning model will be improved in order to consider a model as close as possible to real missions. We will consider the \gls{gcs} as a new scheduling part of the model, in order to decide the \gls{gcs} for each \gls{uav}. We will also consider refuelling tasks, which will allow the planner to obtain a higher number of solutions in missions with teams of \glspl{uav} with low fuel capacity.
+
+It is important to remark that the results obtained are highly dependant on the proposed scenarios and on the topology of the areas the missions are developed in. So further works should consider different scenarios and topologies, so a more general conclusion would be obtained. In this sense, we will try to developed some robust datasets in order to have reliable benchmarks for the comparison of our results.
+
+In addition, we will developed a new approach for solving our problem based on the hybridization of \gls{csp} techniques with \glspl{ga}. This approach will be compared against the \gls{bb} approach in order to compare the quality of the solutions and the runtime spent in the search.
+
+Furthermore, we will use a Multiobjective model, i.e. \gls{moea}, such as \gls{spea2} or \gls{nsga2} algorithms; to find the \gls{pof}. Using these new algorithms, new heuristics to reduce the complexity of the problem and adapting our current model, we expect to be able to simulate problems near to real scenarios.

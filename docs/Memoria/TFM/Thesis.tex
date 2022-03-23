@@ -1,0 +1,302 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ---------------------------------------------------------------- 
+
+% Set up the document
+\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\graphicspath{{Figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+\usepackage[flushleft]{threeparttable}
+\usepackage[acronym]{glossaries}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{longtable}
+\usepackage{tabularx}
+% Include any extra LaTeX packages required
+\usepackage[square, numbers, comma, sort&compress]{natbib}  % Use the "Natbib" style for the references in the Bibliography
+\usepackage{verbatim}  % Needed for the "comment" environment to make LaTeX comments
+\usepackage{vector}  % Allows "\bvec{}" and "\buvec{}" for "blackboard" style bold vectors in maths
+\hypersetup{urlcolor=blue, colorlinks=true}  % Colours hyperlinks in blue, but this can be distracting if there are many links.
+\newcommand{\NewPage}{\newpage\null\thispagestyle{empty}\newpage}
+\makeglossaries
+%% ----------------------------------------------------------------
+\begin{document}
+\frontmatter	  % Begin Roman style (i, ii, iii, iv...) page numbering
+
+% Set up the Title Page
+
+\title  {A Multi-UAV Simulator for User Data Analysis}
+\authors  {\texorpdfstring
+            {\href{}{V\'ictor Rodr\'iguez Fern\'andez}}
+            {V\'ictor Rodr\'iguez Fern\'andez}
+          }
+\supervisor {\texorpdfstring
+             {\href{}{David Camacho Fern\'andez}}
+             {David Camacho Fern\'andez}
+            }            
+\addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
+\date       {\today}
+\subject    {}
+\keywords   {Unmanned Aircraft Vehicles, Simulator, Videogames, Behavior analysis}
+\claves   {Sistemas A\'ereos no tripulados, Planificaci\'on de Misiones, Simulador, An\'alisis de comportamiento}
+
+\maketitle
+%% ----------------------------------------------------------------
+
+\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{}  % Clears all page headers and footers
+\rhead{\thepage}  % Sets the right side header to show the page number
+\lhead{}  % Clears the left side page header
+
+\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+%\NewPage
+%% ----------------------------------------------------------------
+% Declaration Page required for the Thesis, your institution may give you a different text to place here
+%\Declaration{
+%
+%\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+%
+%I, Victor Rodriguez Fernandez, declare that this thesis titled, A Multi-UAV Simulator for User Data Analysis, and the work presented in it are my own. I confirm that:
+%
+%\begin{itemize} 
+%\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a Master degree at this University.
+% 
+%\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+% 
+%\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
+% 
+%\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+% 
+%\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
+% 
+%\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
+%\\
+%\end{itemize}
+%
+%
+%{\large This work is supported by the Spanish Ministry of Science and Education under Project Code TIN2010-19872 and Savier Project (Airbus Defence \& Space, FUAM-076915).}
+%
+% 
+% 
+%Signed:\\
+%\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
+% 
+%Date:\\
+%\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+%}
+%\clearpage  % Declaration ended, now start a new page
+
+%% ----------------------------------------------------------------
+% The "Funny Quote Page"
+\NewPage
+\pagestyle{empty}  % No headers or footers for the following pages
+
+\null\vfill
+% Now comes the "Funny Quote", written in italics
+\textit{``Drones, drones everywhere..."}
+
+\begin{flushright}
+The Beards
+\end{flushright}
+
+\vfill\vfill\vfill\vfill\vfill\vfill\null
+\clearpage  % Funny Quote page ended, start a new page
+%% ----------------------------------------------------------------
+
+% The Abstract Page
+\NewPage
+\glsdisablehyper
+\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
+\begin{abstract}
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+\begin{small}
+%Abstract en inglés
+English Abstract
+\end{small}
+
+\end{abstract}
+
+\clearpage  % Abstract ended, start a new page
+%% ----------------------------------------------------------------
+
+% Pagina Resumen
+\NewPage
+\glsdisablehyper
+\addtotoc{Resumen}  % Add the "Abstract" page entry to the Contents
+\begin{resumen}
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+\begin{small}
+%Abstract en español
+Spanish Abstract
+\end{small}
+
+\end{resumen}
+
+\clearpage  % Abstract ended, start a new page
+%% ----------------------------------------------------------------
+
+\NewPage
+\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+
+Acknowledgements
+
+}
+\clearpage  % End of the Acknowledgements
+\NewPage
+%% ----------------------------------------------------------------
+
+\pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+
+%% ----------------------------------------------------------------
+\lhead{\emph{Contents}}  % Set the left side page header to "Contents"
+\tableofcontents  % Write out the Table of Contents
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Figures}}  % Set the left side page header to "List if Figures"
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\lhead{\emph{List of Tables}}  % Set the left side page header to "List of Tables"
+\listoftables  % Write out the List of Tables
+%% ----------------------------------------------------------------
+\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
+\clearpage  % Start a new page
+\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+{
+% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+
+%ACRONIMOS
+\newacronym{ai}{AI}{Artificial Intelligence}
+\textbf{AI} & \textbf{A}rtificial \textbf{I}ntelligence  \\
+
+\newacronym{bt}{BT}{Backtracking}
+\textbf{BT} & \textbf{B}ack\textbf{T}racking \\
+
+\newacronym{csop}{CSOP}{Constraint Satisfaction Optimization Problem}
+\textbf{CSOP} & \textbf{C}onstraint \textbf{S}atisfaction \textbf{O}ptimization  \textbf{P}roblem \\
+
+\newacronym{csp}{CSP}{Constraint Satisfaction Problem}
+\textbf{CSP} & \textbf{C}onstraint \textbf{S}atisfaction \textbf{P}roblem \\
+
+\newacronym{ga}{GA}{Genetic Algorithm}
+\textbf{GA} & \textbf{G}enetic \textbf{A}lgorithm \\
+
+\newacronym{gcs}{GCS}{Ground Control Station}
+\textbf{GCS} & \textbf{G}round \textbf{C}ontrol \textbf{S}tation \\
+
+\newacronym{hci}{HCI}{Human Computer Interface}
+\textbf{HCI} & \textbf{H}uman \textbf{C}omputer \textbf{I}nterface \\
+
+\newacronym{ia}{IA}{Interval Algebra}
+\textbf{IA} & \textbf{I}nterval \textbf{A}lgebra \\
+
+\newacronym{pof}{POF}{Pareto Optimal Frontier}
+\textbf{POF} & \textbf{P}areto \textbf{O}ptimal \textbf{F}rontier  \\
+
+\newacronym{tcsp}{TCSP}{Temporal Constraint Satisfaction Problem}
+\textbf{TCSP} & \textbf{T}emporal \textbf{C}onstraint  \textbf{S}atisfaction \textbf{P}roblem \\
+
+\newacronym{uas}{UAS}{Unmanned Aircraft System}
+\textbf{UAS} & \textbf{U}nmanned \textbf{A}ircraft \textbf{S}ystem \\
+
+\newacronym{uav}{UAV}{Unmanned Air Vehicle}
+\textbf{UAV} & \textbf{U}nmanned \textbf{A}ir \textbf{V}ehicle \\
+
+\newacronym{ums}{UMS}{UAV Mission Simulator}
+
+\newacronym{uv}{UV}{Unmanned Vehicle}
+
+\newacronym{us}{US}{Unmanned System}
+}
+
+%% ----------------------------------------------------------------
+%\clearpage  % Start a new page
+%\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
+%\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
+%{
+%% Constant Name & Symbol & = & Constant Value (with units) \\
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+
+%}
+
+%% ----------------------------------------------------------------
+%\clearpage  %Start a new page
+%\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
+%\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
+%{
+%% symbol & name & unit \\
+%$a$ & distance & m \\
+%$P$ & power & W (Js$^{-1}$) \\
+%& & \\ % Gap to separate the Roman symbols from the Greek
+%$\omega$ & angular frequency & rads$^{-1}$ \\
+%}
+%% ----------------------------------------------------------------
+% End of the pre-able, contents and lists of things
+% Begin the Dedication page
+
+%\setstretch{1.3}  % Return the line spacing back to 1.3
+
+%\pagestyle{empty}  % Page style needs to be empty for this page
+%\dedicatory{Dedicated to my father. Your son is doing well.}
+
+%\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+
+
+%% ----------------------------------------------------------------
+\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
+\pagestyle{fancy}  % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis, as separate files
+% Just uncomment the lines as you write the chapters
+\glsresetall
+
+\input{./Chapters/Introduction} % Introduction
+
+\input{./Chapters/RelatedWork} % Related Work
+
+%\input{./Chapters/Chapter3} % Architecture
+
+%\input{./Chapters/Chapter4} % Experimental Setup
+
+%\input{./Chapters/Chapter5} % Experimental Results
+
+%\input{./Chapters/Chapter6} % Conclusion
+
+%% ----------------------------------------------------------------
+% Now begin the Appendices, including them as separate files
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+\input{./Appendices/AppendixA}	% CSP solvers comparison
+
+%\input{./Appendices/AppendixB} % Publications
+
+%\input{./Appendices/AppendixC} % Appendix Title
+
+\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
+\backmatter
+
+%% ----------------------------------------------------------------
+\label{Bibliography}
+\lhead{\emph{Bibliography}}  % Change the left side page header to "Bibliography"
+\bibliographystyle{unsrtnat}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\nocite{*}
+\bibliography{Bibliography}  % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  % The End
+%% ----------------------------------------------------------------

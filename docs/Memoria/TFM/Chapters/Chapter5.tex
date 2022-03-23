@@ -1,0 +1,331 @@
+% Chapter 5
+
+\chapter{Experimental Results} % Write in your own chapter title
+\label{Chapter5}
+\lhead{Chapter 5. \emph{Experimental Results }} % Write in your own chapter title to set the page header
+
+\section{Experiment 1: Search of the Complete Space of solutions with Backtracking}\label{experiment1}
+
+\gls{bt} search implemented by Gecode solver has been used to solve the missions explained in the previous section, analysing the runtime spent in the process. This search algorithm performs constraint propagation with different consistency levels depending on the type of the constraint. For all the developed constraints in our problem, domain (or node) consistency is applied.
+
+Due to some fuel and flight time constraints, with only 2 or 3 \glspl{uav} there is no solution for a high number of tasks $(> 6)$, so the solver has been run in different scenarios with 4 to 7 vehicles to test the scalability of the problem.
+
+In the following sections, the scalability of the runtime and number of solutions obtained is studied based on the three different schemas from section \ref{temporalschemas}. First each schema is tested individually, and finally the three are compared between them.
+
+\subsection{Study with temporally independent tasks}
+Figures \ref{fig:noDependenciesSolutions} and \ref{fig:noDependenciesRuntime} shows the number of solutions and runtime obtained when the tasks do not collide in time (see Figure \ref{fig:tempoNoDep}). As we can see, the growth of the number of solutions is nearly exponential as the number of tasks increase. Indeed, the exponentiality is higher and more appreciable as the number of \glspl{uav} increase. For the runtime, the situation is similar, and the exponentiality growth is much higher. So it is clear that the scalability of the problem, as the number of variables increase, is exponential.
+
+	%\begin{figure}[h]
+		%\centering
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/noDependenciesSolutions}
+			\caption{Number of solutions for missions with the No-Temporal Dependency Schema.}
+			\label{fig:noDependenciesSolutions}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/noDependenciesRuntime}
+			\caption{Runtime for missions with the No-Temporal Dependency Schema}
+			\label{fig:noDependenciesRuntime}
+		\end{figure}
+		%\caption{Results from the simulation of different missions with number of tasks from 1 to 10, where each task has no dependencies with any other, for groups of 4 to 7 UAVs.}
+		%\label{fig:noDependencies}
+	%\end{figure}
+
+\subsection{Study with 1-temporal dependency tasks}
+On the other hand, Figures \ref{fig:1DependencySolutions} and \ref{fig:1DependencyRuntime} shows what happens when each task collides in time with the previous task (see Figure \ref{fig:tempo1Dep}). As it can be seen, the growth is still pretty exponential for both the number of solutions and the runtime, but much smaller than with no dependencies. We also note that for less \glspl{uav} to perform the tasks, the exponentiality of the number of solutions disappears. This is because of the high number of constraints (increased with the new temporal constraints) that reduces the space search and, for a high number of tasks, makes the problem highly complex.
+
+	%\begin{figure}[h]
+		%\centering
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.84\textwidth]{./Figures/1DependencySolutions}
+			\caption{Number of solutions for mission with the 1-Temporal Dependency Schema.}
+			\label{fig:1DependencySolutions}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.84\textwidth]{./Figures/1DependencyRuntime}
+			\caption{Runtime for mission with the 1-Temporal Dependency Schema.}
+			\label{fig:1DependencyRuntime}
+		\end{figure}
+		%\caption{Results from the simulation of different missions with number of tasks from 1 to 10, where each task collides in time with the previous, for groups of 4 to 7 UAVs.}
+		%\label{fig:1Dependency}
+	%\end{figure}
+
+\subsection{Study with 2-temporal dependencies tasks}
+When each task collides in time with the two previous tasks (see Figure \ref{fig:tempo2Dep}), the results in Figures \ref{fig:2DependenciesSolutions} and \ref{fig:2DependenciesRuntime}  show that the growth of the runtime is still exponential, but much smaller than in the two previous cases. On the other hand, the growth of the number of solutions has a more polynomial likely behaviour. We can notice how a great number of constraints affect the scalability of the solutions of the problem.
+	
+	%\begin{figure}[h]
+		%\centering
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/2DependenciesSolutions}
+			\caption{Number of solutions for missions with the 2-Temporal Dependencies Schema.}
+			\label{fig:2DependenciesSolutions}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/2DependenciesRuntime}
+			\caption{Runtime for missions with the 2-Temporal Dependencies Schema.}
+			\label{fig:2DependenciesRuntime}
+		\end{figure}
+		%\caption{Results from the simulation of different missions with number of tasks from 1 to 10, where each task collides in time with the two previous, for groups of 4 to 7 UAVs.}
+		%\label{fig:2Dependencies}
+	%\end{figure}
+
+\subsection{Interdependency comparison}	
+Finally, in Figures \ref{fig:interdependencySolutions} and \ref{fig:interdependencyRuntime} we can see for a group of 6 UAVs, a comparison of the results obtained according to the number of existing dependencies explained in the three previous experiments. We can see how the temporal constraints highly affect the space of solutions of the problem, but also the runtime necessary to find this new space of solutions.
+	
+	%\begin{figure}[h]
+		%\centering
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/interdependencySolutions}
+			\caption{Number of solutions for missions with the three temporal dependency schemas.}
+			\label{fig:interdependencySolutions}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.85\textwidth]{./Figures/interdependencyRuntime}
+			\caption{Runtime for missions with the three temporal dependency schemas.}
+			\label{fig:interdependencyRuntime}
+		\end{figure}
+		%\caption{Comparison of the results from the simulations of different missions with number of tasks from 1 to 10 for a group of 6 UAVs; with no dependencies, one dependency with the previous task or dependencies with the two previous tasks between them.}
+		%\label{fig:interdependency}
+	%\end{figure}
+
+On the other hand, we have computed the runtimes expended in these missions but with 9 \glspl{uav} (see table \ref{table:bt_runtime}), which will be compared to the runtimes expended at finding optimal solutions in the next experiment.
+
+\begin{table}[h]
+\caption{Runtime for missions with 1 to 10 tasks for a group of 9 \glspl{uav}, with the three temporal dependency schemas.}
+\label{table:bt_runtime}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+No. of tasks & \begin{minipage}{1.6in}
+    \vskip 4pt
+    \centering
+    No Temp. Dep. Schema\\
+    Runtime
+    \vskip 6pt
+\end{minipage} & \begin{minipage}{1.5in}
+    \vskip 4pt
+    \centering
+    1 Temp. Dep. Schema\\
+    Runtime
+    \vskip 6pt
+\end{minipage} & \begin{minipage}{1.5in}
+    \vskip 4pt
+    \centering
+    2 Temp. Dep. Schema\\
+    Runtime
+    \vskip 6pt
+\end{minipage}\\
+\noalign{\hrule height 2pt}
+1 task & 9.877ms & 69.072ms & 10.014ms \\
+\hline
+2 tasks & 182.606ms & 199.297ms & 173.222ms \\
+\hline
+3 tasks & 300.091ms & 253.523ms & 197.731ms \\
+\hline
+4 tasks & 3.002687s & 1.896258s & 1.517302s \\
+\hline
+5 tasks & 13.007988s & 7.490989s & 4.074907s \\
+\hline
+6 tasks & 51.789774s & 24.119561s & 11.333178s \\
+\hline
+7 tasks & 3m55s & 1m10s & 23.701752s \\
+\hline
+8 tasks & 18m55s & 3m51s & 47.584619s \\
+\hline
+9 tasks & 5h0m41s & 47m45s & 5m10s \\
+\hline
+10 tasks & 22h20m57s & 3h15m44s & 17m14s \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Conclusions}
+In this experiment, we show that the model is easily computable using a known solver, and the entire space of solutions can be found provided that the mission is resolvable. From the obtained results, we have observed that the runtime necessary to search the entire space of solutions by \gls{bt} search is exponential as reported in literature. However, as the number of constraints increases (in this case the dependency constraints making tasks collide in time), the runtime decreases highly, but this scalability still resembles exponential. On the other hand, the number of solutions resembles exponential, but as the number of dependency constraints increases, the scalability loses its exponential behaviour and resembles more polynomial. This is due to the power of a dependency temporal constraint, which highly reduces the search space of solutions.
+
+Although the runtime needed for exploring the space of solutions is exponential, we have seen that when there are too many constraints, as the number of tasks increase, there is a point where the resources of the available \glspl{uav} needed to supply all the tasks of the mission begin to decrease. In this situation, the number of solutions begins to decrease despite the increase of possible assignments due to a higher number of tasks.
+
+
+\section{Experiment 2: Search of optimal solution with Branch \& Bound}\label{experiment2}
+
+This second experiment treats with the scenario with a group of 9 \glspl{uav} to perform a mission of 10 tasks, and where each task collides in time with its two previous tasks, i.e. the 2-Temporal Dependency Schema.
+
+Gecode provides a \gls{bb} search method for optimization problems, but does not automatically compute the \gls{pof}, so the cost function for the \gls{csop} will be the one explained in section \ref{optimization}.
+
+This experiment starts comparing the different results obtained optimizing the different objectives individually and then take some of them to optimize altogether. Finally, the runtime results will be compared with the results from the previous \gls{bt} experiment in order to determine the order of the temporal gain from optimization.
+
+
+\subsection{Individual Optimization}
+\gls{bb} returns the best solution found based on the cost function used. So, firstly, an analysis of the optimal solution found considering as cost function each one of the objectives individually is carried out. It can be seen in Table \ref{table:solutionsIndividual}.
+
+\begin{table}[h]
+\caption{Objective values and runtime spent in the search of the optimal solution using cost functions considering individually each objective.}
+\label{table:solutionsIndividual}
+\centering
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+Cost function & Flight Time & No. of UAVs & Fuel & Runtime\\
+\noalign{\hrule height 2pt}
+100\% Fuel & 22h 8min 13s  & \textbf{4} & \textbf{269.561L} & 4min 9s \\
+\hline
+100\% No. of UAVs & 23h 22min 23s & \textbf{4} & 282.003L & \textbf{8.87s} \\
+\hline
+100\% Flight Time & \textbf{18h 0min 8s} & 8 & 284.875L & 7min 32s \\
+\hline
+\end{tabular}
+\end{table}
+
+It can be appreciated when considering cost function $100\%$ Flight Time that, besides the high runtime needed, the optimal solution found has a high number of \glspl{uav} and fuel consumption. This could be due to shorter flight times are obtained using \glspl{uav} that reach higher speeds but consuming more fuel, i.e. the flight time and the fuel consumption (or the number of UAVs too) have some kind of inverse relation. On the other hand, the number of \glspl{uav} and the fuel consumption are highly related.
+
+Respect to the runtime, when considering the number of \glspl{uav} the optimization search finishes very soon, because this variable is computed directly from the assignments. The fuel consumption lasts a little more to be computed in each iteration, and the flight time is nearly the last variable being computed.
+
+In the following experiment, we will try to optimize multiple variables at the same time. With this purpose, we will try to find a combination of weights that gets a optimal solution reducing the runtime as much as possible.
+
+
+\subsection{Balanced cost function}
+Attempting to optimize multiple objectives, there has been considered to use balanced cost function. Table \ref{table:solutionsBinary} shows solutions obtained when considering two objectives, while Table \ref{table:solutionsTernary} shows the ones when considering three objectives.
+
+\begin{table}[h]
+\caption{Objective values and runtime spent in the search of the optimal solution using binary balanced cost functions.}
+\label{table:solutionsBinary}
+\centering
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+Cost function & Flight Time & No. of UAVs & Fuel & Runtime\\
+\noalign{\hrule height 2pt}
+\begin{minipage}{1.5in}
+50\% Fuel + \\
+50\% No. of UAVs 
+\end{minipage}  & 22h 8min 13s  & \textbf{4} & \textbf{269.561L} & \textbf{54.67s} \\
+\hline
+\begin{minipage}{1.5in}
+50\% Fuel + \\
+50\% Flight Time
+\end{minipage} & \textbf{18h 29min 20s} & 7 & 279.353L & 8m11s \\
+\hline
+\begin{minipage}{1.5in}
+50\% No. of UAVs + \\
+50\% Flight Time 
+\end{minipage}  & 19h 37min 58s & \textbf{4} & 278.436L & 2min 51s \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Objective values and runtime spent in the search of the optimal solution using ternary balanced cost functions.}
+\label{table:solutionsTernary}
+\centering
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+Cost function & Flight Time & No. of UAVs & Fuel & Runtime\\
+\noalign{\hrule height 2pt}
+\begin{minipage}{2in}
+33\% Fuel + 33\% No. of UAVs \\
+ + 33\% Flight Time 
+\end{minipage} & 20h 23min 33s  & 4 & 269.561L & 3m56s \\
+\hline
+\end{tabular}
+\end{table}
+
+Now it can be seen that combining weighted objectives reduce the runtime spent searching the solution compared to the previous individual optimization experiment in some cases. Specifically, we can see that combining the number of \glspl{uav} with the fuel consumption, gets an optimal solution for both variables. On the other hand, considering the flight time involves finding some suboptimal solutions for all the variables. In table \ref{table:solutionsTernary}, we can clearly see that the flight time is not optimized while the number of \glspl{uav} and the fuel consumption are.
+
+Considering this aspect, we have decided to put the flight time variable aside and only consider the fuel consumption and the number of \glspl{uav}. So, in the next section, a simple experiment will be considered in which the fuel consumption and the number of \glspl{uav} are considered for a comparative assessment of optimization function weights.
+
+
+\subsection{Optimizing the runtime with weighted cost functions}
+Table \ref{table:solutionsFuelUAV} show the comparative assessment mentioned in the previously. For simplicity of the process, we have considered a weight step of $10\%$ between each instance tested.
+
+\begin{table}[!h]
+\caption{Objective values and runtime spent in the search of the optimal solution using cost functions considering fuel and number of UAVs with different percentages.}
+\label{table:solutionsFuelUAV}
+\centering
+\begin{tabular}{|c|c|c|c||c|}
+\hline
+Cost function & Flight Time & No. of UAVs & Fuel & Runtime\\
+\noalign{\hrule height 2pt}
+100\% Fuel & 22h 8min 13s  & 4 & 269.561L & 4min 9s \\
+\hline
+90\% Fuel + 10\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 3min 22s \\
+\hline
+80\% Fuel + 20\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 2min 7s \\
+\hline
+70\% Fuel + 30\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 1min 39s \\
+\hline
+60\% Fuel + 40\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 1min 23s \\
+\hline
+50\% Fuel + 50\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 54.67s \\
+\hline
+40\% Fuel + 60\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 46.03s \\
+\hline
+30\% Fuel + 70\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 35.02s \\
+\hline
+20\% Fuel + 80\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & \textbf{33.99s} \\
+\hline
+10\% Fuel + 90\% No. of UAVs & 22h 8min 13s  & 4 & 269.561L & 34.13s \\
+\hline
+100\% No. of UAVs & 23h 22min 23s & 4 & 282.003L & 8.87s \\
+\hline
+\end{tabular}
+\end{table}
+
+Analysing results shown in Table \ref{table:solutionsFuelUAV}, it can be appreciated that only considering the fuel consumption in a low percentage, an optimal solution both for the fuel and number of UAVs minimization is reached. Additionally, it is clearly appreciable that as the weight of the fuel consumption variable decreases, so it does the runtime spent in the search. Nevertheless, it can also be seen that the cost function $20\%$ fuel + $80\%$ No. of UAVs spends less runtime that the cost function $10\%$ fuel + $90\%$ No. of UAVs, breaking this linearity. This could be caused by some ``noise" in the execution of the program and the little difference of runtime between these two functions.
+
+For this reason, it can be considered that a cost function of $10\%$ fuel + $90\%$ No. of UAVs is pretty good for searching feasible solutions in low runtime for this kind of problems.
+
+Finally, in the next section, we will compare the runtime obtained with this cost function with the one obtained in the \gls{bt} experiment. In addition, we will compute the runtimes of this same problem with this cost function but considering the No-Temporal Dependencies Schema and the 1-Temporal Dependency Schema. Then, we will also compare these runtimes with the ones obtained in the \gls{bt} experiment.
+
+
+\subsection{\gls{bt} vs \gls{bb}}
+In this experiment, we have first calculated the runtime spent in the search of optimal solutions for the mission planning problem composed of 10 tasks and a group of 9 \glspl{uav} with the No-Temporal Dependencies Schema and 1-Temporal Dependency Schema (the 2-Temporal Dependencies Schema case was computed in the previous experiment) using \gls{bb} with the cost function $10\%$ fuel + $90\%$ No. of \glspl{uav}.
+
+Then, the runtime spent in the search of feasible solutions and the runtime spent in the search of the entire space of solutions using \gls{bt} are compared in Table \ref{table:btvsbb}.
+
+\begin{table}[h]
+\caption{Runtime for missions with 10 tasks for a group of 9 \glspl{uav}, with the three temporal dependency schemas, using \gls{bt} and \gls{bb}.}
+\label{table:btvsbb}
+\centering
+\begin{tabular}{|c||c|c|c|}
+\hline
+Algorithm & \begin{minipage}{1.3in}
+\centering
+No Dependencies \\
+Schema Runtime
+\end{minipage} & \begin{minipage}{1.3in}
+\centering
+1-Dependency \\
+Schema Runtime
+\end{minipage} & \begin{minipage}{1.3in}
+\centering
+2-Dependencies \\
+Schema Runtime
+\end{minipage} \\
+\noalign{\hrule height 2pt}
+BT & 22h20m57s & 3h15m44s & 17m14s \\
+\hline
+\begin{minipage}{1.5in}
+\centering
+B\&B (10\%  Fuel + \\
+90\% No. of UAVs)
+\end{minipage} & 11.33s & 26.74s & 34.13s \\
+\hline
+\end{tabular}
+\end{table}
+
+The time difference observed is high, as expected. A surprising fact is that, unlike it happened in \gls{bt} search, as the number of temporal constraints given by the temporal dependency schemas decrease, the runtime decreases. For instance, with the No-Temporal Dependency Schema, the runtime obtained for the \gls{bb} search is 11.33s; while the time obtained in the 2-Temporal Dependencies Schema is 34.13s. On the other hand, the runtime for \gls{bt} in the No-Temporal Dependency Schema is 22h 20min 57s, being higher than \gls{bb} in an order of $8 \cdot 10^3$; while in the 2-Temporal Dependencies Schema the runtime for \gls{bt} is 17min 14s, higher than \gls{bb} in an order of $30$ units.
+
+
+\subsection{Conclusions}
+In this second experiment, we have designed an optimization function to minimize four objectives: the fuel consumption, the number of \glspl{uav} used in the mission and the total flight time of all the \glspl{uav}. From the obtained results, we have observed that the flight time is the most difficult variable to compute, while the number of vehicles is the easiest.
+
+Studying the solutions found by several cost functions with different weights for fuel and number of \glspl{uav}, we have observed how the runtime spent in the search decrease as the percentage of fuel decreases. Finally, we have compared the runtime from the \gls{bb} search obtained using the proposed weighted cost function $10\%$ fuel + $90\%$ No. of \glspl{uav} with the runtime obtained using \gls{bt}. As shown in the literature, this second is much higher; concretely we have observed that for this problem with the No-Temporal Dependency Schema it is $3 \cdot 10^3$ times higher. The most interesting fact observed is that the runtime spent in the \gls{bb} search decreases as the number of temporal constraints given by the temporal dependency schemas decreases.
+
+It is important to remark that the results obtained are highly dependant on the proposed scenarios and on the topology of the areas the missions are developed in. So further works should consider different scenarios and topologies, so a more general conclusion would be obtained.
+
+\NewPage

@@ -1,0 +1,28 @@
+{
+  "name": "gameGUI",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lordbitin/TFM",
+  "authors": [
+    "victor rodriguez"
+  ],
+  "description": "HTML5 game interface to play the Drone_Watch&Rescue simulator",
+  "keywords": [
+    "uav",
+    "drone",
+    "simulator"
+  ],
+  "license": "UAM",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "venturocket-angular-slider": "~0.3.2",
+    "angularjs-scroll-glue-Luegg": "~1.0.1",
+    "moment": "~2.7.0"
+  }
+}

@@ -1,0 +1,49 @@
+% Appendix A
+\chapter{DWR Dataset}
+\label{AppendixA}
+\lhead{Appendix A. \emph{Drone Watch And Rescue Dataset}}
+
+This appendix shows the entire dataset used to save the data from a simulation executed by the simulator \textit{Drone Watch And Rescue}. The Data Base Management System used to store this dataset is \emph{MongoDB}, and hence the data is organized into collections.
+
+\label{table:DWRDataset}
+\centering
+\begin{tabularx}{\textwidth}{|l|l|l|X|}
+\hline
+Collection & Field & Format & Description \\
+\noalign{\hrule height 2pt}
+Simulations &	\_id	 & ObjectId	 &	 	MongoDB unique identifier\\
+Simulations &	clientIP	 & String	 & 	Player's IP address\\
+Simulations &	createdAt	 & Date		&	Simulation start date\\
+Simulations	&	environmentId	&	Number	&	An identifier of the environment used in this simulation\\
+Simulations	&	missionPlanId	&	Number	&	An identifier of the mission plan used in this simulation\\
+Simulations	&	incidentSchedulingId	&	Number	&	An identifier of the incident schedule used in this simulation\\
+Simulations	&	targetsDefinitionId	&	Number	&	An identifier of the targets definition used in this simulation\\
+
+\hline
+
+SimulationSnapshots	&	\_id	&	ObjectId	&	MongoDB unique identifier\\
+SimulationSnapshots	&	simulation\_id	&	ObjectId*	&	Reference to the associated simulation\\
+SimulationSnapshots	&	simulationElapsedTime	&	Number	&	Time (in $ms$), measured from the beggining of the simulation timeline, in which the snapshot was taken.\\
+SimulationSnapshots	&	realElapsedTime	&	Number	&	Time (in $ms$), measured from the beggining of the real timeline, in which the snapshot was taken.\\
+Simulations	&	simulationSpeed	&	Number	&	Current simulation speed (min. value = 1)\\
+Simulations	&	event	&	ObjectId*	&	Reference to the event that caused this snapshot.\\
+
+\hline
+
+DroneSnapshots	&	\_id	&	ObjectId	&	MongoDB unique identifier\\
+DroneSnapshots	&	simulationSnapshot\_id	&	ObjectId*	&	Reference to the associated simulation snapshot\\
+DroneSnapshots	&	drone\_id	&	Integer	&	An identifier of the drone being saved.\\
+DroneSnapshots	&	status		&	Integer	&	An identifier of the drone status enumeration.\\
+DroneSnapshots	&	remainingFuel	&	Number	&	Current remaining fuel($L$).\\
+DroneSnapshots	&	speed	&	Number	&	Current drone speed.\\
+DroneSnapshots	&	position	&	Object	&	Object containing the current drone's position (x/y, latitude/longitude).\\
+
+\hline
+
+Waypoints	&	\_id	&	ObjectId	&	MongoDB unique identifier\\
+Waypoints	&	droneSnapshots\_id	&	ObjectId*	&	Reference to the associated drone snapshot\\
+Waypoints	&	position	&	Object	&	Object containing the waypoint's position, in the coordinate system used by the associated simulation (x/y, latitude/longitude).\\
+Waypoints	&	type	&	String	&	Waypoint type ()\\
+Waypoints	&	plannedTime	&	Number	&	Time (in ms), measured from the beggining of the simulation timeline, in which it is expected to arrive to this waypoint.\\
+ 	
+\end{tabularx}

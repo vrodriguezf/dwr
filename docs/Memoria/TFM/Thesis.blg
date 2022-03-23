@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Thesis.aux
+The style file: unsrtnat.bst
+Database file #1: Bibliography.bib
+Warning--empty year in flightGear
+Warning--empty year in simbad
+Warning--empty year in simrobot
+You've used 14 entries,
+            2481 wiz_defined-function locations,
+            630 strings with 7334 characters,
+and the built_in function-call counts, 5215 in all, are:
+= -- 452
+> -- 229
+< -- 6
++ -- 95
+- -- 66
+* -- 374
+:= -- 774
+add.period$ -- 44
+call.type$ -- 14
+change.case$ -- 28
+chr.to.int$ -- 13
+cite$ -- 20
+duplicate$ -- 286
+empty$ -- 517
+format.name$ -- 80
+if$ -- 1147
+int.to.chr$ -- 2
+int.to.str$ -- 15
+missing$ -- 11
+newline$ -- 78
+num.names$ -- 33
+pop$ -- 148
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 173
+stack$ -- 0
+substring$ -- 210
+swap$ -- 58
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 98
+warning$ -- 3
+while$ -- 39
+width$ -- 0
+write$ -- 184
+(There were 3 warnings)

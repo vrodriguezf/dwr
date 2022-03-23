@@ -1,0 +1,8 @@
+Notas sobre el analisis : ReplanningSkillsEvolution
+
+- Solo se tienen en cuenta simulaciones de misiones 0,1,3. La misión 4 (planning) queda fuera de este análisis
+
+- De los 27 usuarios que se tienen en la base de datos, se eliminan outliers y usuarios que sólo han jugado una partida (no tiene sentido estudiar su evolución) quedando así un total de 20 usuarios. El nombre de cada
+usuario vienen dado por el identificador [diaDeJuego]_[IPdeJugador]
+
+- 

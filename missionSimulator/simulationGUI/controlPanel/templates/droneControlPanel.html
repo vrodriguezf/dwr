@@ -1,0 +1,59 @@
+<div class="panel dwr-panel" >
+	<div class="panel-heading dwr-panel-heading"><h4>Drone control</h4></div>
+	<div class="dwr-panel-body dwr-control-panel"
+		 ng-style="{'height': 0.3*gameContainer.height + 'px'}">
+		<div ng-if="selectedDrone == null">
+			No drone selected
+		</div>
+		<div ng-if="selectedDrone != null">
+			<div class="row">
+				<div class="col-lg-12">
+					<label>Speed (Km/h)</label>
+					<slider	ng-model="selectedDrone.speed"
+							floor="{{selectedDrone.minSpeed}}"
+							ceiling="{{selectedDrone.maxSpeed}}"
+							ng-click="setSelectedDroneSpeed()"
+							>
+					</slider>										
+				</div>									
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+				<p>
+					<button type="button" 
+							class="btn btn-info btn-sm dwr-droneControlPanelButton"
+							ng-click="setControlMode(0)"
+							ng-disabled = "currentControlModeId == 0" 
+							>
+					  <span class="glyphicon glyphicon-eye-open"> <strong>Monitor</strong></span>
+					</button>
+					<button type="button" 
+							class="btn btn-success btn-sm dwr-droneControlPanelButton" 
+							ng-click="setControlMode(1)"
+							ng-disabled = "currentControlModeId == 1"  
+							>
+					  <span class="glyphicon glyphicon-flag"> <strong>Add waypoints</strong></span>
+					</button>
+					<button type="button" 
+							class="btn btn-danger btn-sm dwr-droneControlPanelButton"
+							ng-click="setControlMode(2)"
+							ng-disabled = "currentControlModeId == 2"  
+							>
+					  <span class="glyphicon glyphicon-plane"> <strong>Manual</strong></span>
+					</button>
+					<!--
+					<button type="button" 
+							class="btn btn-warning btn-sm dwr-droneControlPanelButton"
+							ng-click="returnToAirport()" 
+							>
+					  <span class="glyphicon glyphicon-home"> <strong>Go to airport</strong></span>
+					</button>					
+					-->
+				</p>					
+				</div>		
+			</div>						
+			<div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<div class="dwr-panel">
+	<div class="panel-heading dwr-panel-heading" >
+		<div class="row">
+			<div class="col-lg-8">
+				<h4>Drone information </h4>
+			</div>
+			<div class="col-lg-4">
+				<button class="btn btn-default btn-sm btn-block"
+						ng-click="selectDrone({id:null})">
+					<span class="glyphicon glyphicon-eye-close"> UnselectDrones</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="panel-body dwr-panel-body"  ng-style="{'height': 0.5*gameContainer.height + 'px'}" >
+		<div ng-repeat="drone in drones">						
+			<div class="row">
+				<div class="col-lg-3">
+					<img ng-src="/simulationGUI/assets/img/drones/barracuda_white.png" width="100%" height="100%">
+				</div>
+				<div class="col-lg-5">
+					<h3>{{drone.name}}</h3>
+				</div>
+				<div class="col-lg-4 col-middle">
+					<button type="button" 
+							class="btn btn-default btn-sm" 
+							ng-disabled="drone==selectedDrone"
+							ng-click = "selectDrone(drone)">
+					  <span class="glyphicon glyphicon-plane"> Select</span>
+					</button>										
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3"></div>
+				<div class="col-lg-9">
+					<div class="table-responsive">
+						<table class="table">
+							<tbody>
+								<tr>
+									<td>ID</td>
+									<td>{{drone.id}}</td>
+								</tr>
+								<tr>
+									<td>Status</td>
+									<td>{{drone.status.text}}</td>
+								</tr>
+								<tr>
+									<td>Position</td>
+									<td>({{coordConverter([drone.position.x,drone.position.y])[0] | number:3}},
+										{{coordConverter([drone.position.x,drone.position.y])[1]| number:3}})</td>
+								</tr>
+								<tr>
+									<td>Altitude</td>
+									<td>{{drone.altitude | number:2}} km</td>
+								</tr>
+								<tr>
+									<td>Remamining fuel</td>
+									<td>{{drone.remainingFuel | number:2}} L</td>
+								</tr>
+								<tr>
+									<td>Fuel capacity</td>
+									<td>{{drone.fuelCapacity | number:2}} L</td>
+								</tr>
+								<tr>
+									<td>Fuel consumption</td>
+									<td>{{drone.fuelConsumption | number:2}} L/km</td>
+								</tr>
+								<tr>												
+									<td>Speed</td>												
+									<td>{{drone.speed | number:2}} km/h</td>
+								</tr>											
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>					
+	</div>				
+</div>

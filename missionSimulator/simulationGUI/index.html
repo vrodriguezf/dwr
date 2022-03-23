@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Drone Watch & Rescue</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/simulationGUI/css/slider.css">	
+    <link rel="stylesheet" type="text/css" href="/simulationGUI/css/main.css">	
+	<script src="/socket.io/socket.io.js"></script>
+	<!--<script type="text/javascript" src="serverConf.js"></script>-->
+	<script type="text/javascript">
+	console.log('Host: ' +  location.hostname);
+	console.log('Port' + location.port);
+		//CONNECT TO THE SOCKET SERVER
+		var socket = io.connect(location.hostname, {
+			port: location.port,
+			transports: ['websocket']
+		});
+	</script>
+	<script data-main="/simulationGUI/main" src="/bower_components/requirejs/require.js"></script>
+</head>
+<body ng-controller="droneCtrl">
+	<div class="row" ng-style="{'height': getHeightByPercentage(layout.heightPercentages.header) + 'px'}">
+		<div class="col-lg-8">
+			<h1>{{getMainTitle()}}</h1>
+			<hr>			
+		</div>
+		<div class="col-lg-4">
+			<label>Simulation speed</label>			
+			<slider	ng-model="simulationTimeRatio"
+				floor="1"
+				ceiling="1000"
+				ng-click="setSimulationTimeRatio()"
+				ng-change="onSimulationTimeRatioChange()"
+				>
+			</slider>		
+		</div>		
+	</div>
+	<div class="row" id="gameContainerRow" style="min-height:60%;max-height:60%" >
+		<!-- Phaser Game container  -->
+		<div class="col-lg-8" id="gameContainer">
+		</div>
+		<!-- Phaser Game container -->		
+		<div class="col-lg-4"  ng-style="{'height': 0.6*gameContainer.height + 'px'}">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- ./Drone info panel -->	
+					<div ng-include src="'/simulationGUI/controlPanel/templates/droneInfoPanel.html'"></div>
+					<!-- ./Drone info panel -->						
+				</div>
+				<!-- ./col -->
+			</div>
+			<!-- ./row -->
+			<div class="row"  ng-style="{'height': 0.4*gameContainer.height + 'px'}">
+				<div class="col-lg-12">
+					<!-- Drone control panel -->
+					<div ng-include src="'/simulationGUI/controlPanel/templates/droneControlPanel.html'"></div>
+					<!-- ./Drone control panel -->					
+				</div>				
+			</div>
+			<!-- ./row -->			
+		</div>		
+	</div>
+	<div class="row" ng-style="{'height': getHeightByPercentage(layout.heightPercentages.sub) + 'px'}">
+		<div class="col-lg-8" >
+			<!-- Waypoint panel-->
+			<div ng-include src="'/simulationGUI/controlPanel/templates/waypointPanel.html'"></div>
+			<!-- ./Waypoint panel-->			
+		</div>
+		<div class="col-lg-4">
+			<div ng-include src="'/simulationGUI/controlPanel/templates/consolePanel.html'"></div>
+		</div>
+	</div>
+	<!-- ./row -->
+	<div class="row" ng-style="{'height': getHeightByPercentage(layout.heightPercentages.footer) + 'px'}">
+		<div class="footer">
+			<div class="col-lg-12 text-center" >
+				<em>AIDA-UAM Created by Victor Rodriguez</em>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div class="dwr-panel dwr-waypointsTable">
+	<div class="panel-heading dwr-panel-heading">
+		<h4>Waypoints</h4>
+	</div>
+	<div class="dwr-waypointsTableHeading">
+		<table class="table" style="table-layout:fixed">
+			<thead>
+				<tr>
+					<th class="col-lg-1">Selection</th>
+					<th class="col-lg-1">#</th>
+					<th class="col-lg-1">Type</th>
+					<th class="col-lg-1" ng-if="isTestMission">X (Km)</th>
+					<th class="col-lg-1" ng-if="isTestMission">Y (Km)</th>
+					<th class="col-lg-1" ng-if="!isTestMission">Latitude</th>
+					<th class="col-lg-1" ng-if="!isTestMission">Longitude</th>
+					<!--<th class="col-lg-1">Arrival time</th>-->
+					<th class="col-lg-1">
+						<button type="button" 
+								class="btn btn-default btn-xs"
+								ng-disabled="selectedWaypoints.length == 0 || selectedWaypoints[0].id == waypoints[0].id"
+								ng-click="waypointUp(selectedWaypoints[0])"
+								>
+						  <span class="glyphicon glyphicon-arrow-up"> Up</span>
+						</button>							
+					</th>
+					<th class="col-lg-1">
+						<button type="button" 
+								class="btn btn-default btn-xs"
+								ng-disabled="selectedWaypoints.length == 0 || selectedWaypoints[0].id == waypoints[waypoints.length-1].id"
+								ng-click="waypointDown(selectedWaypoints[0])"									
+								>
+						  <span class="glyphicon glyphicon-arrow-down"> Down</span>
+						</button>							
+					</th>
+					<th class="col-lg-1">
+						<button type="button" 
+								class="btn btn-default btn-xs"
+								ng-disabled="selectedWaypoints.length == 0"
+								ng-click="removeWaypoint(selectedWaypoints[0])"									
+								>
+						  <span class="glyphicon glyphicon-remove"> Remove</span>
+						</button>							
+					</th>
+				</tr>
+			</thead>				
+		</table>		
+	</div>	
+	<div class="dwr-panel-body" 
+		ng-style="{'height': getHeightByPercentage(layout.heightPercentages.sub)*layout.scrollBodyPercentajes.waypointTable + 'px'}">
+		<div ng-if="selectedDrone == null">
+			No drone selected
+		</div>
+		<div ng-if="selectedDrone!=null">
+			<div class="table-responsive">
+				<table class="table dwr-waypointsTable">
+					<tbody>
+						<tr ng-repeat="waypoint in waypoints" 
+							selection-model 
+							selection-model-type="checkbox"
+							selection-model-selected-items="selectedWaypoints"
+							selection-model-on-change="waypointSelectionChanged(waypoint)">
+							<td class="col-lg-1"><input type="checkbox"></td>
+							<td class="col-lg-1">{{$index + 1}}</td>
+							<td class="col-lg-1">{{waypoint.type | uppercase}}</td>
+							<td class="col-lg-1">{{coordConverter([waypoint.x,waypoint.y])[0]| number:4}}</td>
+							<td class="col-lg-1">{{coordConverter([waypoint.x,waypoint.y])[1]| number:4}}</td>
+							<!--<td class="col-lg-1">{{formatTime(waypoint.plannedTime)}}</td>-->
+							<td class="col-lg-1"></td>
+							<td class="col-lg-1"></td>
+							<td class="col-lg-1"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- /. table-responsive -->						
+		</div>
+	</div>
+</div>

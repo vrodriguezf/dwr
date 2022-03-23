@@ -1,0 +1,1 @@
+#Get the agressiveness of each player

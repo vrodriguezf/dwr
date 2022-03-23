@@ -1,0 +1,380 @@
+% Chapter 3
+
+\chapter{Architecture Model for UAV Mission Planning} % Write in your own chapter title
+\label{Chapter3}
+\lhead{Chapter 3. \emph{Architecture Model for UAV Mission Model}} % Write in your own chapter title to set the page header
+
+\gls{uav} missions consists of a number $n$ of tasks performed by a team of $m$ \glspl{uav}. The main goal to solve the Misison Planning problem is to assign each task with an \gls{uav} that is able to perform it in a departure time sufficient to reach the task area in time. Note that the \gls{uav} could be parked at an airport or in flight after performing a previous task. %For this simple approach, we will despise the \gls{uav} fuel and time costs due to the takeoff and loiter during tasks development.
+Figure \ref{fig:missionPlanning} shows an overview of the mission planning process.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{./Figures/missionPlanning.png}
+\caption{Mission Planning overview.}
+\label{fig:missionPlanning}
+\end{figure}
+
+In this process, the Mission Planner receives a big amount of data about the environment, the available vehicles and its sensors and the mission for the purpose of using it for planning. The mission planner uses this information to compute the plans and then returns a set of tuples $<Task, Vehicle, Time>$ that specifies what tasks must do a \gls{uav} in a determinate moment.
+
+Aiming to reproduce this functionality, we have developed a Mission Planning framework, that will be shown in next section.
+
+
+\section{Framework Architecture}\label{architecture}
+The architecture of the framework developed is shown in Figure \ref{fig:framework}. In this architecture, the Mission Planner, which is placed in the Mission Planning Module, uses a \gls{csp} solver, in this case Gecode \cite{SchulteEtAl2010}, to model and solve the \gls{tcsp} model that will be explained in section \ref{tcspmodel}. The planner receives the resource information (i.e. the information about the zones, sensors and \glspl{uav} involved in the mission), which is a static information stored in the system. On the other hand, the operator of the mission, through a \gls{hci}, provides the information about the mission (i.e. its tasks). After the execution of the Mission Planner, it returns a set of plans or solutions, which contain the tuples $<Task, Vehicle, Time>$ and some extra information about the estimated parameters of the mission, such as the fuel consumption, the speed of the vehicles, the total flight time, etc.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./Figures/architecture.png}
+\caption{Mission Planning Framework Architecture.}
+\label{fig:framework}
+\end{figure}
+
+The following sections will describe in detail the data model used in the Mission Planner and the \gls{tcsp} modelling of the mission planning problem.
+
+\section{Mission Data Model}\label{datamodel}
+The data model used in the Mission Planner can be divided in four components related to the Sensors (or Payloads), Zones, \glspl{uav} and Mission (or Tasks) information. The next subsections explain each one of these components in detail.
+
+
+\subsection{Sensors}
+Sensors or payloads are attached to vehicles and they permit developing the tasks of the mission, such as taking photos or tracking a zone. Figure \ref{fig:sensor} shows a UML data model of class sensor and its main subclasses.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./Figures/sensors.png}
+\caption{Sensor UML Data Model.}
+\label{fig:sensor}
+\end{figure}
+
+In this work, we have considered three different sensors:
+
+\begin{itemize}
+
+\item Camera Electro-Optical/Infra-red (EO/IR): This sensor allow the \gls{uav} to take photos. It has some internal features, such as the type of the camera, its zoom, resolution and its modes.
+
+\item Radar: It allows to track the elements in a zone near the vehicle. Its main feature is the type of the radar (SAR, I-SAR or GMTI).
+
+\item Communications Equipment: This equipment allows the \gls{uav} to communicate and send real-time pictures to the \gls{gcs}.
+
+\end{itemize}
+
+
+\subsection{Zones}\label{zones}
+Zones or areas are used to represent the place where the tasks of the mission are developed. Figure \ref{fig:zone} shows a UML data model of class Zone and its associate classes.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./Figures/zones.png}
+\caption{Zone UML Data Model.}
+\label{fig:zone}
+\end{figure}
+
+\subsubsection{Coordinates}
+The class \textit{Coordinates} is used to represent a geographic point. It is composed by its Longitude, Latitude and Altitude. In this work, the distance between two points (name them, $x_1 [long_1,lat_1,alt_1]$ and $x_2[long_2,lat_2,alt_2]$) is computed using the Haversine formula with the latitude and longitude:
+\small
+\begin{equation}
+	d_{2D} (x_1,x_2) = 2r_{EARTH} \arcsin\sqrt{\sin^2(\frac{lat_2-lat_1}{2}) + \cos(lat_1) \cos(lat_2) \sin^2(\frac{long_2-long_1}{2})}
+\end{equation}
+\normalsize
+
+and then the Euclidean distance with the resulting and the altitude
+
+\begin{equation}
+	d_{3D} (x_1,x_2) = \sqrt{d_{2D}^2(x_1,x_2)+(alt_2-alt_1)^2}.
+\end{equation}
+
+Besides, the bearing between two points is computed as:
+\small
+\begin{equation}
+	\theta_{12}=arctan2(\sin(long_2-long_1) \cos(lat_2), \cos(lat_1) \sin(lat_2) - \sin(lat_1) \cos(lat_2) \cos(long_2-long_1))
+\end{equation}
+\normalsize
+
+
+\subsubsection{Line}
+On the other hand, the class \textit{Line}, which extends from class \textit{Segment}, is composed by two points. The 2D distance from a line (name it, $l_1$ with points $x_1$ and $x_2$) to a external point (name it, $x_3[long_3,lat_3,alt_3]$) is computed using the cross-track distance:
+
+\begin{equation}
+	d_{2D} (l_1,x_3)= \arcsin(\sin({\delta}_{13}) \sin ({\theta}_{13}-{\theta}_{12})) r_{EARTH}
+\end{equation}
+
+where ${\delta}_{13}$ is the distance between the point and the first vertex of the line,  ${\theta}_{13}$  is the starting bearing between the first vertex of the line and the point and ${\theta}_{12}$ is the starting bearing between the first vertex and the second vertex of the line.
+
+Then, the 3D distance is computed using Euclidean distance with the 2D distance and the altitude difference of the point to the closest point in the line:
+
+\begin{equation}
+	d_{3D} (l_1,x_3)= \sqrt{d_{2D}^2(l_1,x_3)+(alt_{closest}-alt_3)^2}.
+\end{equation}
+
+The altitude of the closest point is directly known from:
+
+\begin{equation}
+	alt_{closest}=alt_1 + (alt_2-alt_1)*\frac{\arccos(\frac{\cos({\delta}_{13}/r_{EARTH})}{\cos(d_{2D}(l_1,x_3)/r_{EARTH})})r_{EARTH}}{{\delta}_{12}}.
+\end{equation}
+
+
+\subsubsection{Zone}
+The class \textit{Zone} represents an area where a task is developed. An zone is composed by
+
+\begin{itemize}
+
+\item Several segments. As the only type of segment implemented is the line, a zone is a polygon (or a polygonal prism).
+
+\item An altitude window $[h_{min},h_{max}]$ defined by the minimum and maximum altitude.
+
+\item A flag indicating whether the zone is restricted or not. 
+
+\end{itemize}
+
+The class Zone determines whether a zone is closed or not if all the points of every segment is repeated at least twice. The position of a point respect to a zone is determined using the winding number algorithm:
+
+\begin{algorithm}
+\caption{Calculate the position of a point respect to a zone.}
+\label{} 
+\begin{algorithmic}
+\State $cumulated = 0$
+\For {each segment of the zone}
+	\If {$(initLong - pointLong) \cdot (pointLong - endLong) \geq 0$ AND $(initLat - pointLat) \cdot (pointLat - endLat) \geq 0$ AND $(pointLongitude - initLongitude) \cdot (endLatitude - initLat) = (pointLat - initLat) \cdot (endLong - initLong))$}
+		\If {$pointAlt < minAlt$ OR $pointAlt > maxAlt$}
+			\State \Return OUTSIDE
+		\EndIf
+		\State \Return BOUND
+	\EndIf
+	\State $angle = point.endBearing(init) – point.endBearing(end)$
+	\If {$angle \geq PI$} 
+		\State $angle -= 2*PI$
+	\Else
+		\If {$angle \leq -PI$}
+			\State $angle += 2*PI$
+		\EndIf
+	\EndIf
+	\State $cumulated += angle$
+\EndFor
+\If {$cumulated/PI = 0$ OR $pointAlt < minAlt$ OR $pointAlt > maxAlt$}
+	\State \Return OUTSIDE
+\Else
+	\State \Return INSIDE
+\EndIf
+\end{algorithmic}
+\end{algorithm}
+
+Finally, the distance from a point to a zone is computed as the minimum distance to any of the segments of the zone.
+
+
+\subsection{\glspl{uav}}
+A mission counts with a number $m$ of available \glspl{uav} for its development. Each \gls{uav} (named it, \gls{uav} $k$) has some specific characteristics:
+
+\begin{itemize}
+
+\item Position and fuel at the beginning of the mission.
+\item Fuel consumption rate
+\item The maximum reachable speed $v_{k,max}$ 
+\item The minimum cruise speed $v_{k,min}$
+\item Maximum and minimum flight altitude $[h_{min},h_{max}]$
+\item Permission to go to restricted zones
+\item Available sensors $P_k$ (cameras, radars, communication equipments, \ldots)
+
+\end{itemize}
+
+Moreover, in each point in time, each \gls{uav} is positioned at some specific \textit{coordinates}, flies at some specific \textit{cruise speed} $v_{k \to i}$ and is filled with a specific amount of \textit{fuel}.
+
+Figure \ref{fig:uav} shows the class UAV and its attributes. Some additional attributes, such as the maxFlightTime and the withinRange are not consider in the modelling, but they have been added for future works.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./Figures/uav.png}
+\caption{UAV UML Data Model.}
+\label{fig:uav}
+\end{figure}
+
+\subsection{Tasks}
+A mission consists of a set of $n$ tasks to be performed. A task consists of performing an action in a specific zone, such as exploring the area or search for an object. Therefore, each task (name it, task $i$) consist of:
+
+\begin{itemize}
+
+\item An action, which can be carried out thanks to the sensors or payloads $P_i$ belonging to a particular \gls{uav}. Table \ref{table:taskActions} shows the relation between actions and sensor needs.
+
+\begin{table}[h]
+\caption{Different task actions considered}
+\label{table:taskActions}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Action ID & Action & Sensors Needed\\
+\noalign{\hrule height 2pt}
+A0 & Taking pictures of a zone & \begin{minipage}{2.5in}
+    \vskip 4pt
+    \begin{itemize}
+    	\item Camera EO/IR
+    \end{itemize}
+    \vskip 4pt
+\end{minipage} \\
+\hline
+A1 & Taking real-time pictures of a zone & \begin{minipage}{2.5in}
+    \vskip 4pt
+    \begin{itemize}
+    	\item Camera EO/IR
+    	\item Communications Equipment
+    \end{itemize}
+    \vskip 4pt
+\end{minipage} \\
+\hline
+A2 & Tracking a zone & \begin{minipage}{2.5in}
+    \vskip 4pt
+    \begin{itemize}
+    	\item Radar SAR
+    \end{itemize}
+    \vskip 4pt
+\end{minipage} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\item Geographic area with altitude window $[h_{min},h_{max}]$, which could be restricted.
+
+\item Time interval with duration $\tau_i$ and end time $t_i$
+
+\item Mean speed $\bar{v_i}$ at performing the task 
+
+\end{itemize}
+
+Figure \ref{fig:task} shows the class \textit{Task} and its attributes.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{./Figures/task.png}
+\caption{Task UML Data Model.}
+\label{fig:task}
+\end{figure}
+
+
+\section{TCSP Mission Modelling}\label{tcspmodel}
+
+Nowadays there are several functionally \gls{csp} solvers developed. Our purpose is to use one of these already developed solvers to model and solve our Mission Planning problem.
+
+For this purpose, different \gls{csp} solver technologies have been studied (see Appendix \ref{AppendixA}) in order to choose the better one to be improved, not only the fastest but the most suitable to our aim.
+
+From this study, Gecode \cite{SchulteEtAl2010} has been selected as the best tool for \gls{csp} solving in terms of efficiency. This tool will be used in the following section to model the mission planning problem.
+
+\subsection{TCSP Modelling using Gecode}
+One of the main advantages of using Gecode for \gls{tcsp} modelling is that, in its most recent versions, it provides float variables, which can be used for defining all the real variables of the problem: times, speeds, distances, \ldots These float variables and the constraints involving them are internally solved through Allen's \gls{ia} (see Chapter \ref{tcsp_rw}).
+
+Now, the problem domain is modelled as a \gls{tcsp}. The main variables are the \textit{tasks} and their values will be the \textit{\glspl{uav}} that perform each task and their respective \textit{departure times}. Moreover, there are some additional variables: the cruise speed to reach the area of the task $v_{k \to i}$, the fuel cost, the distance travelled for each task; which can be deduced from tasks assignment and \gls{uav} characteristics.
+
+Figure \ref{fig:assignment} shows an assignment of a \gls{uav} $k$ to a task $i$. In this representation, it must be considered that:
+
+	\begin{figure}[h]
+		\includegraphics[width=1\textwidth]{./Figures/taskExample.png}
+		\centering
+		\caption{Scenario for performance of task $i$ by \gls{uav} $k$.}
+		\label{fig:assignment}
+	\end{figure}
+
+\begin{itemize}
+
+\item The vehicle is positioned at $pos_{k,i}$ at departure time $t_{d_i}$
+
+\item The distance travelled to reach the task area in time $d_{k \to i}$, is computed using the formulas from section \ref{zones}:
+\begin{equation}
+	d_{k \to i} = i.area.distance(pos_{k,i})
+\end{equation}
+
+\item The flight time of the vehicle is
+\begin{equation}\label{eq:flightTime}
+	{flightTime}_i= \frac{d_{k \to i}}{v_{k \to i}} + \tau_i
+\end{equation}
+
+\item The fuel consumed by the vehicle is
+\begin{equation}\label{eq:fuelConsume}
+	f_i=k.fuelConsume * (d_{k \to i} + \tau_i \bar{v_i})
+\end{equation}
+
+\end{itemize}
+
+The main constraints defined in this model are as follows:
+
+\begin{enumerate}
+
+\item Temporal constraints assuring a \gls{uav} does not perform two tasks at the same time. Let $k$ be a \gls{uav} that executes two tasks $i$ and $j$, where $i$ takes place before $j$, then $t_i$ must precede the departure time $t_{d_j}$ (see Figure \ref{fig:assignment2}):
+
+\begin{equation}\label{eq:temporalConstraint}
+  t_i \leqslant t_{d_j} = t_j - {flightTime}_i
+\end{equation}
+
+	\begin{figure}[!h]
+		\includegraphics[width=1\textwidth]{./Figures/taskExample2.png}
+		\centering
+		\caption{Scenario for performance of tasks $i$ and $j$ by \gls{uav} $k$.}
+		\label{fig:assignment2}
+	\end{figure}
+
+\item Logical constraints:
+
+\begin{enumerate}
+
+\item Speed window constraints: the mean speed necessary to perform the task $i$, $\bar{v_i}$, must be contained in the speed window $v_{k,max}$ and $v_{k,min}$:
+
+\begin{equation}
+  v_{k,min} \leq \bar{v_i} \leq v_{k,max}
+\end{equation}
+
+\item Altitude window constraints: a UAV $k$, with an altitude window $k_{h_{max}}$ and $k_{h_{min}}$, performing a task $i$ developed in an area with an altitude window $h_{max}$ and $h_{min}$, must obey:
+
+\begin{align}
+  k.h_{max} \geq i.area.h_{max} \\
+  k.h_{min} \leq i.area.h_{min}
+\end{align}
+
+\item Zone permission constraints: another constraint is the implication that a restricted area has in the tasks to perform. Just UAVs with permissions in those areas shall perform the tasks.
+
+\end{enumerate}
+
+\item Resource constraints:
+
+\begin{enumerate}
+
+\item Sensor constraints: another constraint is whether a UAV carries the corresponding sensor to perform a task. Let $P_k$ denote the sensors available for UAV $k$ and $P_i$ the sensors needed for the task $i$ (performed by $k$), then:
+
+\begin{equation}
+  P_i \subseteq P_k,
+\end{equation}
+
+\item Fuel constraints: finally, we must constraint the fuel cost for each UAV. The fuel cost for a UAV $k$ performing a task $i$ is
+
+\begin{equation}\label{eq:fuel}
+	f_i=k.fuelConsumeRate * (d_{k \to i} + \tau_i \bar{v_i})
+\end{equation}
+
+So the following inequality must be obeyed:
+
+\begin{equation}
+  \sum_{i \in T_k} f_i \leqslant k.fuel
+\end{equation}
+
+\end{enumerate}
+
+\end{enumerate}
+
+To compute the distance (needed for the compute of flight time, see Equation \ref{eq:flightTime}), it is necessary to know where the vehicle is located before the start of the task, i.e. its position $pos_{k,i}$. Therefore, we have created a $m \times n$ matrix of tasks to \gls{uav} position. This matrix is initialized with every row, i.e. the positions of a specific vehicle, to the initial position of that vehicle. Each time a task assignment is considered in the constraint propagation process, this matrix is updated with the computed position of each vehicle at the end of the task.
+
+All the aforementioned variables and constraints have been computed in Gecode to represent the Mission Planning Model. In following chapters, it will be shown how to solve this model with some methods provided by the solver.
+
+
+\subsection{Optimization Function and Constraint Optimization Problem}\label{optimization}
+As in many real-life applications, we just want to find some good solutions, what can be achieved considering a \gls{csop}. In order to apply a method for solving \gls{csop}, a new optimization function has been designed. This new function is looking to optimize (minimize) 3 objectives:
+
+\begin{itemize}
+	\item The total fuel consumed, computed as the sum of the fuel consumptions for each task using equation \ref{eq:fuelConsume}.
+	
+	\item The number of \glspl{uav} used in the mission. A mission performed with a lower number of vehicles is usually better because the remaining vehicles can perform other missions at the same time.
+	
+	\item The total flight time,  which is computed as the sum of the flight times for each task using equation \ref{eq:flightTime}.
+\end{itemize}
+
+As Gecode does not provide a method for computing the \gls{pof}, our model uses weights to map these three objectives into a single cost function, as the similar approach \gls{wcop} \cite{TorrensEtAl02}. This function is computed as the sum of percentage values of these three objectives, as shown in Equation \ref{eq:OptimizationFunction}. In this sense, in the second experimental phase, a comparative assessment of weights for finding feasible solutions of the problem will be carried out.
+
+\begin{align}\label{eq:OptimizationFunction}
+  f_{cost}(i) = K_{F}\frac{Fuel(i)}{\max_j{Fuel(j)}} &+ K_{U}\frac{N^{\circ}UAVs(i)}{\max_j{N^{\circ}UAVs(j)}} + K_{T}\frac{Flight Time(i)}{\max_j{Flight Time(j)}}\nonumber \\[1em]
+  & K_{F},K_{U},K_{T}\in[0,1],\qquad K_{F}+K_{U}+K_{T}=1
+\end{align}

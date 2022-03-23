@@ -1,0 +1,9 @@
+<div class="panel dwr-panel">
+	<div id="consolePanelHeading" class="panel-heading dwr-panel-heading"><h4>Console</h4></div>
+	<div class="panel-body dwr-panel-body dwr-console-container" scroll-glue
+			ng-style="{'height': (layout.scrollBodyPercentajes.console*getHeightByPercentage(layout.heightPercentages.sub) - layout.waypointTableMargin) + 'px'}">
+		<div ng-repeat="logMessage in logMessages">
+			<div>{{logMessage.time.hours()}}h:{{logMessage.time.minutes()}}m:{{logMessage.time.seconds()}}s-[{{logMessage.level.text}}] : {{logMessage.text}}</div>
+		</div>
+	</div>
+</div>

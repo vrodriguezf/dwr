@@ -1,0 +1,211 @@
+{
+	"bounds" : {
+		"northWest" : {
+			"lat" : "37 52 27.9 N",
+			"long" : "117 38 58.1 W"
+		},
+		"southEast" : {
+			"lat" : "35°29'41.6 N",
+			"long" : "113°38'59.7 W"
+		},
+		"southWest" : {
+			"lat" : "110 4 21 W",
+			"long" : "115 56 10 W"
+		},
+		"northEast" : {
+			"lat" : "36 41 0 N",
+			"long" : "115 56 10 W"
+		}
+	},
+	"areas" : [
+		{
+			"restricted" : false,
+			"maxAltitude" : 5,
+			"minAltitude" : 1.5,
+			"polygon" : [
+				{
+					"lat" : "36 41 0 N",
+					"long" : "115 56 10 W"
+				},
+				{
+					"lat" : "37 6 0 N",
+					"long" : "115 56 10 W"
+				},
+				{
+					"lat" : "37 6 0 N",
+					"long" : "115 35 10 W"					
+				},
+				{
+					"lat" : "37 16 55 N",
+					"long" : "115 35 0 W"					
+				},
+				{
+					"lat" : "37 16 55 N",
+					"long" : "115 18 10 W"					
+				},
+				{
+					"lat" : "36 38 8 N",
+					"long" : "115 18 10 W"					
+				},
+				{
+					"lat" : "36 25 40 N",
+					"long" : "115 18 10 W"					
+				},
+				{
+					"lat" : "36 25 40 N",
+					"long" : "115 23 20 W"					
+				},
+				{
+					"lat" : "36 35 0 N",
+					"long" : "115 37 10 W"					
+				},
+				{
+					"lat" : "36 35 0 N",
+					"long" : "115 53 0 W"					
+				},
+				{
+					"lat" : "36 35 45 N",
+					"long" : "115 56 10 W"					
+				}																																								
+			]
+		},
+		{
+			"restricted" : true,
+			"maxAltitude" : 6.15,
+			"minAltitude" : 2.5,
+			"polygon" : [
+				{
+					"lat" : "37 16 55 N",
+					"long" : "115 18 10 W"					
+				},
+				{
+					"lat" : "36 38 8 N",
+					"long" : "115 18 10 W"					
+				},
+				{
+					"lat" : "36 47 40 N",
+					"long" : "115 7 0 W"					
+				},
+				{
+					"lat" : "37 11 45 N",
+					"long" : "115 7 0 W"					
+				},
+				{
+					"lat" : "37 16 55 N",
+					"long" : "115 11 0 W"					
+				}																				
+			]			
+		},
+		{
+			"restricted" : false,
+			"maxAltitude" : 3.75,
+			"minAltitude" : 0.5,
+			"polygon" : [
+				{
+					"lat" : "37 16 0 N",
+					"long" : "116 11 10 W"
+				},
+				{
+					"lat" : "37 20 0 N",
+					"long" : "116 11 0 W"					
+				},
+				{
+					"lat" : "37 23 0 N",
+					"long" : "116 17 15 W"					
+				},
+				{
+					"lat" : "37 23 0 N",
+					"long" : "116 22 15 W"					
+				},
+				{
+					"lat" : "37 21 0 N",
+					"long" : "116 27 0 W"					
+				},
+				{
+					"lat" : "37 21 0 N",
+					"long" : "116 34 10 W"					
+				},
+				{
+					"lat" : "37 16 0 N",
+					"long" : "116 31 0 W"					
+				}																												
+			]
+		}
+	],
+	"UAVs" : [
+		{
+			"maxTime": 10,
+			"maxH" : 6,
+			"minH" : 0.3,
+			"maxS" : 100,
+			"minS" : 90,
+			"fuel" : 101.48,
+			"consume" : 0.159,
+			"wr" : 220,
+			"restricted" : false,
+			"altitude" : 0,
+			"position" : {
+				"lat" : "36 31 22 N",
+				"long" : "114 53 10 W"
+			},
+			"capacities" : [
+				{
+					"name" :"cameraEOIR",
+					"params" : {
+						"type" : "INFRARED",
+						"resolution" : 3.2,
+						"zoom" : 3,
+						"modes" : ["MANUAL", "VIDEOTRACKING"]					
+					}
+				},
+				{
+					"name" :"radar",
+					"params" : {
+						"type" : "SAR"
+					}
+				},
+				{
+					"name" : "radar",
+					"params" : {
+						"type" : "GMTI"
+					}
+				},
+				{
+					"name" : "COMMSEQUIPMENT",
+					"params" : {}
+				}								
+			]
+		},
+		{
+			"maxTime": 10,
+			"maxH" : 6,
+			"minH" : 0.3,
+			"maxS" : 100,
+			"minS" : 90,
+			"fuel" : 58.48,
+			"consume" : 0.159,
+			"wr" : 220,
+			"restricted" : false,
+			"altitude" : 0,
+			"position" : {
+				"lat" : "36 25 45 N",
+				"long" : "115 10 14 W"
+			},
+			"capacities" : [
+				{
+					"name" :"cameraEOIR",
+					"params" : {
+						"type" : "GYROSTABILIZED",
+						"resolution" : 7,
+						"zoom" : 3,
+						"modes" : ["MANUAL", "GEOTRACKING"]					
+					}
+				},
+				{
+					"name" :"sigint",
+					"params" : {}
+				}									
+			]
+		}
+	]
+}

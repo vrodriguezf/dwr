@@ -1,0 +1,117 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add a new incident</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-lg-6">
+            <label>Name</label>
+            <input class="form-control" type="text" ng-model="newIncident._id">
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-lg-12">
+            <label>Start time</label>
+            <slider
+                    ng-model="newIncident.startTime"
+                    floor="0"
+                    ceiling="{{mission.duration}}"
+                    translate-fn="translateIncidentTime">
+            </slider>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+                <div class="form-group">
+                    <label>End time</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" ng-model="hasEndTime">
+                        Activated
+                    </label>
+                </div>
+                <slider
+                        ng-model="incidentEndTime"
+                        ng-disabled = "!hasEndTime"
+                        floor="0"
+                        ceiling="{{mission.duration}}"
+                        translate-fn="translateIncidentTime">
+                </slider>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <label>Type</label>
+            <ui-select class="" ng-model="newIncident.type">
+                <ui-select-match>{{$select.selected}}</ui-select-match>
+                <ui-select-choices repeat="item in incidentTypes | filter : $select.search">
+                    <div ng-bind-html="item | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="col-lg-6">
+            <label>Level</label>
+            <ui-select class="" ng-model="newIncident.level">
+                <ui-select-match>{{$select.selected}}</ui-select-match>
+                <ui-select-choices repeat="item in incidentLevels | filter : $select.search">
+                    <div ng-bind-html="item | highlight: $select.search"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-lg-9">
+            <label>Message</label>
+            <textarea class="form-control" rows="2" ng-model="newIncident.message"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <hr>
+            <label>Parameters</label>
+            <hr>
+            <div ng-switch on="newIncident.type">
+                <div ng-switch-when="DangerArea">
+                    <!-- Danger Area Incident -->
+                    <label>Area points</label>
+                    <div ng-repeat="areaPoint in areaPoints">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Latitude</label>
+                                <input class="form-control" type="number" ng-model="areaPoint[0]">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Longitude</label>
+                                <input class="form-control" type="number" ng-model="areaPoint[1]">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row top-buffer">
+                        <div class="col-lg-12">
+                            <button class="btn btn-primary center-block"
+                                    ng-click="addAreaPoint()">
+                                <span class="glyphicon glyphicon-plus"> Add new area point</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div ng-switch-when="PayloadIncident">
+                    <div class="col-lg-4">
+                        <label>UAV affected</label>
+                        <ui-select ng-model="uavAffected">
+                            <ui-select-match>{{$select.selected.UAVs_id}}</ui-select-match>
+                            <ui-select-choices repeat="item in mission.scenary.uavs| filter : $select.search">
+                                <div ng-bind-html="item.UAVs_id | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div ng-switch-default>
+                    Select an incident type
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()" ng-disabled="!(isNewIncidentOk())">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

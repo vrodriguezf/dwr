@@ -1,0 +1,450 @@
+\ifglsentryexists{ai}{}%
+{%
+\gls@defglossaryentry{ai}%
+{%
+name={AI},%
+sort={AI},%
+type={acronym},%
+first={Artificial Intelligence\glsspace (AI)},%
+firstplural={Artificial Intelligences\glsspace (AIs)},%
+text={AI},%
+plural={AIs},%
+description={Artificial Intelligence},%
+descriptionplural={Artificial Intelligence\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Artificial Intelligence},%
+longplural={Artificial Intelligences},%
+short={AI},%
+shortplural={AIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{bt}{}%
+{%
+\gls@defglossaryentry{bt}%
+{%
+name={BT},%
+sort={BT},%
+type={acronym},%
+first={Backtracking\glsspace (BT)},%
+firstplural={Backtrackings\glsspace (BTs)},%
+text={BT},%
+plural={BTs},%
+description={Backtracking},%
+descriptionplural={Backtracking\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Backtracking},%
+longplural={Backtrackings},%
+short={BT},%
+shortplural={BTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{csop}{}%
+{%
+\gls@defglossaryentry{csop}%
+{%
+name={CSOP},%
+sort={CSOP},%
+type={acronym},%
+first={Constraint Satisfaction Optimization Problem\glsspace (CSOP)},%
+firstplural={Constraint Satisfaction Optimization Problems\glsspace (CSOPs)},%
+text={CSOP},%
+plural={CSOPs},%
+description={Constraint Satisfaction Optimization Problem},%
+descriptionplural={Constraint Satisfaction Optimization Problem\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Constraint Satisfaction Optimization Problem},%
+longplural={Constraint Satisfaction Optimization Problems},%
+short={CSOP},%
+shortplural={CSOPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{csp}{}%
+{%
+\gls@defglossaryentry{csp}%
+{%
+name={CSP},%
+sort={CSP},%
+type={acronym},%
+first={Constraint Satisfaction Problem\glsspace (CSP)},%
+firstplural={Constraint Satisfaction Problems\glsspace (CSPs)},%
+text={CSP},%
+plural={CSPs},%
+description={Constraint Satisfaction Problem},%
+descriptionplural={Constraint Satisfaction Problem\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Constraint Satisfaction Problem},%
+longplural={Constraint Satisfaction Problems},%
+short={CSP},%
+shortplural={CSPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ga}{}%
+{%
+\gls@defglossaryentry{ga}%
+{%
+name={GA},%
+sort={GA},%
+type={acronym},%
+first={Genetic Algorithm\glsspace (GA)},%
+firstplural={Genetic Algorithms\glsspace (GAs)},%
+text={GA},%
+plural={GAs},%
+description={Genetic Algorithm},%
+descriptionplural={Genetic Algorithm\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Genetic Algorithm},%
+longplural={Genetic Algorithms},%
+short={GA},%
+shortplural={GAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gcs}{}%
+{%
+\gls@defglossaryentry{gcs}%
+{%
+name={GCS},%
+sort={GCS},%
+type={acronym},%
+first={Ground Control Station\glsspace (GCS)},%
+firstplural={Ground Control Stations\glsspace (GCSs)},%
+text={GCS},%
+plural={GCSs},%
+description={Ground Control Station},%
+descriptionplural={Ground Control Station\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ground Control Station},%
+longplural={Ground Control Stations},%
+short={GCS},%
+shortplural={GCSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{hci}{}%
+{%
+\gls@defglossaryentry{hci}%
+{%
+name={HCI},%
+sort={HCI},%
+type={acronym},%
+first={Human Computer Interface\glsspace (HCI)},%
+firstplural={Human Computer Interfaces\glsspace (HCIs)},%
+text={HCI},%
+plural={HCIs},%
+description={Human Computer Interface},%
+descriptionplural={Human Computer Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Human Computer Interface},%
+longplural={Human Computer Interfaces},%
+short={HCI},%
+shortplural={HCIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ia}{}%
+{%
+\gls@defglossaryentry{ia}%
+{%
+name={IA},%
+sort={IA},%
+type={acronym},%
+first={Interval Algebra\glsspace (IA)},%
+firstplural={Interval Algebras\glsspace (IAs)},%
+text={IA},%
+plural={IAs},%
+description={Interval Algebra},%
+descriptionplural={Interval Algebra\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Interval Algebra},%
+longplural={Interval Algebras},%
+short={IA},%
+shortplural={IAs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pof}{}%
+{%
+\gls@defglossaryentry{pof}%
+{%
+name={POF},%
+sort={POF},%
+type={acronym},%
+first={Pareto Optimal Frontier\glsspace (POF)},%
+firstplural={Pareto Optimal Frontiers\glsspace (POFs)},%
+text={POF},%
+plural={POFs},%
+description={Pareto Optimal Frontier},%
+descriptionplural={Pareto Optimal Frontier\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Pareto Optimal Frontier},%
+longplural={Pareto Optimal Frontiers},%
+short={POF},%
+shortplural={POFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{tcsp}{}%
+{%
+\gls@defglossaryentry{tcsp}%
+{%
+name={TCSP},%
+sort={TCSP},%
+type={acronym},%
+first={Temporal Constraint Satisfaction Problem\glsspace (TCSP)},%
+firstplural={Temporal Constraint Satisfaction Problems\glsspace (TCSPs)},%
+text={TCSP},%
+plural={TCSPs},%
+description={Temporal Constraint Satisfaction Problem},%
+descriptionplural={Temporal Constraint Satisfaction Problem\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Temporal Constraint Satisfaction Problem},%
+longplural={Temporal Constraint Satisfaction Problems},%
+short={TCSP},%
+shortplural={TCSPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uas}{}%
+{%
+\gls@defglossaryentry{uas}%
+{%
+name={UAS},%
+sort={UAS},%
+type={acronym},%
+first={Unmanned Aircraft System\glsspace (UAS)},%
+firstplural={Unmanned Aircraft Systems\glsspace (UASs)},%
+text={UAS},%
+plural={UASs},%
+description={Unmanned Aircraft System},%
+descriptionplural={Unmanned Aircraft System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unmanned Aircraft System},%
+longplural={Unmanned Aircraft Systems},%
+short={UAS},%
+shortplural={UASs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uav}{}%
+{%
+\gls@defglossaryentry{uav}%
+{%
+name={UAV},%
+sort={UAV},%
+type={acronym},%
+first={Unmanned Air Vehicle\glsspace (UAV)},%
+firstplural={Unmanned Air Vehicles\glsspace (UAVs)},%
+text={UAV},%
+plural={UAVs},%
+description={Unmanned Air Vehicle},%
+descriptionplural={Unmanned Air Vehicle\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unmanned Air Vehicle},%
+longplural={Unmanned Air Vehicles},%
+short={UAV},%
+shortplural={UAVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ums}{}%
+{%
+\gls@defglossaryentry{ums}%
+{%
+name={UMS},%
+sort={UMS},%
+type={acronym},%
+first={UAV Mission Simulator\glsspace (UMS)},%
+firstplural={UAV Mission Simulators\glsspace (UMSs)},%
+text={UMS},%
+plural={UMSs},%
+description={UAV Mission Simulator},%
+descriptionplural={UAV Mission Simulator\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={UAV Mission Simulator},%
+longplural={UAV Mission Simulators},%
+short={UMS},%
+shortplural={UMSs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uv}{}%
+{%
+\gls@defglossaryentry{uv}%
+{%
+name={UV},%
+sort={UV},%
+type={acronym},%
+first={Unmanned Vehicle\glsspace (UV)},%
+firstplural={Unmanned Vehicles\glsspace (UVs)},%
+text={UV},%
+plural={UVs},%
+description={Unmanned Vehicle},%
+descriptionplural={Unmanned Vehicle\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unmanned Vehicle},%
+longplural={Unmanned Vehicles},%
+short={UV},%
+shortplural={UVs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{us}{}%
+{%
+\gls@defglossaryentry{us}%
+{%
+name={US},%
+sort={US},%
+type={acronym},%
+first={Unmanned System\glsspace (US)},%
+firstplural={Unmanned Systems\glsspace (USs)},%
+text={US},%
+plural={USs},%
+description={Unmanned System},%
+descriptionplural={Unmanned System\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Unmanned System},%
+longplural={Unmanned Systems},%
+short={US},%
+shortplural={USs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

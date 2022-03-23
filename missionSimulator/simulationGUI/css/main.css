@@ -1,0 +1,89 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color:#151515;/*#313132;*/
+    color: white;
+    font-family: Helvetica, Verdana;
+    font-size: 12px;
+    overflow: hidden;
+    margin : 5px;
+    height:100%;
+}
+
+hr {
+    color: #1C1B1C;
+    background-color: #1C1B1C;
+}
+
+table td {
+    border-top: none;
+}
+
+input {
+    color: black;
+}
+
+.dwr-panel {
+    padding:0px;
+    background-color: inherit;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.dwr-panel-heading {
+    border-bottom: 1px solid white;
+    padding: 0px;
+}
+
+.dwr-panel-body {
+    background-color: #595759;
+    border-top: medium none white;
+    border-color: black;
+    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;    
+}
+
+.dwr-control-panel {
+    background-color: inherit;
+    overflow-y: scroll;
+}
+
+.dwr-droneControlPanelButton {
+    margin-right : 5px;
+}
+
+.dwr-console-container {
+    background-color: #E2E1E6;
+    overflow-y:scroll;
+    color: black;
+    font-family: ‘Courier New’, Courier, monospace;
+    font-size: 12px;
+}
+
+.dwr-waypointsTable {
+    padding-left: 5px;   
+}
+
+.dwr-waypointsTable thead {
+    background-color: #424242;
+}
+
+.dwr-waypointsTable .dwr-waypointsTableHeading {
+    margin-bottom: -20px;
+}
+
+/* Attach header to body in the waypoint table*/
+.dwr-waypointsTable .dwr-panel-body {
+    margin-top: 20px;
+}
+
+.selected {
+background-color: #8A4B08;
+}
+.boogaboo {
+background-color: bisque;
+}
