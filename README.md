@@ -6,9 +6,7 @@ This repository contains the source code and the documentation of the multiUAV-s
 
 Drone Watch And Rescue is an online set of applications to create and simulate multi-UAV missions. The funcionality of this application is divided in three main tools:
 
-* Mission designer: Used by an operator to create new 
-    * Sublista
-    * Sublista 2
+* Mission designer: Used by an operator to create new missions.
 * Scenary scheduler: Used by a trainer to define both the mission incidents plan and the interactions that should be done by the mission monitorer during the execution of a mission.
 * Mission simulator: Execute the missions created in the previous tools.
 
