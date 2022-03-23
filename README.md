@@ -1,8 +1,8 @@
-#**Drone Watch And Rescue** #
+# Drone Watch And Rescue
 
 This repository contains the source code and the documentation of the multiUAV-simulation toolkit "Drone Watch & Rescue"
 
-## Description ##
+## Description
 
 Drone Watch And Rescue is an online set of applications to create and simulate multi-UAV missions. The funcionality of this application is divided in three main tools:
 
@@ -12,7 +12,7 @@ Drone Watch And Rescue is an online set of applications to create and simulate m
 * Scenary scheduler: Used by a trainer to define both the mission incidents plan and the interactions that should be done by the mission monitorer during the execution of a mission.
 * Mission simulator: Execute the missions created in the previous tools.
 
-## Requisites ##
+## Requisites
 
 There are some requisites needed before installing and deploying the Drone Watch And Rescue server:
 
@@ -29,7 +29,7 @@ npm install -g bower
 
 * [MongoDB](http://www.mongodb.org/)
 
-## Installation ##
+## Installation
 
 Clone this repository anywhere in your computer, and follow these steps:
 
@@ -60,12 +60,10 @@ node app.js
 
 The Drone Watch And Rescue Server will be deployed at [localhost:8888](http://localhost:8888)
 
-## License ##
+## License
 
 Víctor Rodríguez Fernández, Antonio González Pardo, David Camacho Fernández.
 
 Artificial Intelligence and Data Analysis (AIDA).
 
-Escuela Politécnica Superior.
-
-Universidad Autónoma de Madrid.
+Universidad Politecnica de Madrid
